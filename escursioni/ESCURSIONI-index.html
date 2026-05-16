@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Escursioni in Sardegna con guida certificata AIGAE. Trekking nell'Ogliastra, Supramonte e Costa di Orosei. Gruppi piccoli, percorsi autentici, esperienze indimenticabili.">
+<title>Escursioni in Sardegna | Time to Hike in Sardinia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf7f2;--sand:#f0e9de;--sand2:#e4d9cb;--stone:#c8bbaa;
+  --warm-mid:#a89888;--brown:#6b5c4e;--dark-brown:#3a2e26;--near-black:#1c1612;
+  --sage:#7a8c72;--sage-light:#9fb896;
+  --gold:#c4975a;--gold-dk:#9a6e3a;--gold-lt:#eddcbf;
+  --white:#fff;
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --fb:'Jost',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--sand);color:var(--dark-brown);font-family:var(--fb);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.3rem 4.5rem;transition:all .35s ease;background:rgba(250,247,242,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--stone);box-shadow:0 2px 20px rgba(58,46,38,.07)}
+.nav-logo{text-decoration:none;display:block}
+.nav-logo svg{width:180px;height:auto;--logo-color:#3a2e26}
+.nl{display:flex;gap:2.2rem;list-style:none}
+.nl a{color:var(--brown);text-decoration:none;font-size:.76rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;transition:color .2s}
+.nl a:hover{color:var(--gold)!important}
+.nl .cta{background:var(--gold)!important;color:var(--white)!important;padding:.48rem 1.25rem!important;border-radius:2px}
+.nl .cta:hover{background:var(--gold-dk)!important}
+
+.page-hero{background:var(--near-black);padding:10rem 4rem 5rem;text-align:center}
+.page-hero .lbl{font-size:.67rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:block}
+.page-hero h1{font-family:var(--fd);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;color:var(--white);line-height:1.15;margin-bottom:1rem}
+.page-hero h1 em{font-style:italic;color:var(--gold-lt)}
+.page-hero p{color:rgba(255,255,255,.7);font-size:.97rem;max-width:560px;margin:0 auto}
+
+.si{max-width:1120px;margin:0 auto;padding:6.5rem 4rem}
+.lbl{font-size:.67rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:block}
+.h2{font-family:var(--fd);font-size:clamp(2rem,4vw,3.1rem);font-weight:300;color:var(--near-black);line-height:1.15;margin-bottom:1.1rem}
+.h2 em{font-style:italic;color:var(--gold-dk)}
+.div{width:42px;height:1px;background:var(--gold);margin-bottom:2.2rem}
+
+.ecard{background:var(--white);border-radius:3px;overflow:hidden;box-shadow:0 4px 36px rgba(58,46,38,.09);display:grid;grid-template-columns:260px 1fr;margin-bottom:1.8rem}
+.ecard-side{background:linear-gradient(to top,rgba(28,22,18,.85) 0%,rgba(28,22,18,.18) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem;position:relative;overflow:hidden;min-height:280px}
+.ecard-side-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.8}
+.edate-big{position:relative;z-index:1;font-family:var(--fd);font-size:3.2rem;font-weight:600;color:var(--white);line-height:1;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.emonth{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#ffe8c0;position:relative;z-index:1;margin-bottom:.25rem;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.ebody{padding:2.2rem;display:flex;flex-direction:column;justify-content:space-between}
+.etag{display:inline-block;background:var(--gold-lt);color:var(--gold-dk);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.26rem .75rem;border-radius:2px;margin-bottom:.75rem}
+.etitle{font-family:var(--fd);font-size:1.7rem;font-weight:400;color:var(--near-black);line-height:1.2;margin-bottom:.4rem}
+.eloc{font-size:.8rem;color:var(--brown);margin-bottom:.9rem}
+.edesc{font-size:.91rem;color:var(--dark-brown);line-height:1.78;margin-bottom:1.3rem}
+.mpills{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
+.mp{background:var(--sand);border:1px solid var(--stone);border-radius:20px;padding:.26rem .82rem;font-size:.72rem;color:var(--brown)}
+.price-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--sand2);padding-top:1.1rem}
+.ptag{font-family:var(--fd);font-size:2.3rem;font-weight:400;color:var(--gold-dk);line-height:1}
+.psub{font-size:.66rem;color:var(--warm-mid);letter-spacing:.08em;text-transform:uppercase}
+.eacts{display:flex;gap:.75rem;flex-wrap:wrap}
+.bsm{padding:.58rem 1.3rem;border-radius:2px;font-size:.76rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;display:inline-block}
+.bsmp{background:var(--gold);color:var(--white)}
+.bsmp:hover{background:var(--gold-dk)}
+.bsmg{border:1px solid var(--stone);color:var(--brown);background:transparent}
+.bsmg:hover{border-color:var(--gold);color:var(--gold-dk)}
+.bsmd{background:var(--sand2);color:var(--brown)}
+.bsmd:hover{background:var(--stone)}
+
+.storico{background:var(--cream)}
+.st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem}
+.st-card{background:var(--white);border:1px solid var(--stone);border-radius:3px;padding:1.5rem;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.st-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.st-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(58,46,38,.1)}
+.st-date{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:.4rem}
+.st-title{font-family:var(--fd);font-size:1.18rem;font-weight:400;color:var(--near-black);margin-bottom:.28rem;line-height:1.3}
+.st-meta{font-size:.78rem;color:var(--warm-mid)}
+.st-badge{display:inline-block;background:var(--sage-light);color:var(--white);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.16rem .52rem;border-radius:2px;margin-top:.7rem}
+
+footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.f-links{display:flex;gap:1.5rem}
+.f-links a{color:rgba(255,255,255,.45);text-decoration:none;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.f-links a:hover{color:var(--gold)}
+
+@media(max-width:768px){
+  nav{padding:.9rem 1.5rem}
+  .page-hero{padding:8rem 1.5rem 3.5rem}
+  .si{padding:4rem 1.5rem}
+  .ecard{grid-template-columns:1fr}
+  .ecard-side{min-height:200px}
+  footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}
+  .f-links{justify-content:center;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo" aria-label="Time to Hike in Sardinia">
+    <svg viewBox="0 0 298.28 80" xmlns="http://www.w3.org/2000/svg"><defs><style>.logo-c{fill:var(--logo-color)}</style></defs><path class="logo-c" d="M27.22,51.52c-5.2-6-5.97-14.61-1.81-21.34,2.56-4.14,6.22-6.86,10.94-8.07,4.71-1.21,9.21-0.46,13.37,2.17,0.88,0.56,1.73,1.19,2.52,1.89l5.89-5.89c-1.09-0.97-2.25-1.87-3.47-2.67-5.71-3.64-12.31-4.72-18.59-3.03-6.59,1.78-11.94,5.97-15.55,11.95C15.22,35.7,14.54,46.1,19.68,54.5a28.26,28.26,0,0,0,6.72,7.56l5.82-5.82A20.11,20.11,0,0,1,27.22,51.52Z"/><path class="logo-c" d="M58.71,26.59l-5.89,5.89a13.42,13.42,0,0,1,1.71,17.33,13.6,13.6,0,0,1-11.4,5.94,13.34,13.34,0,0,1-7.13-2.06l-5.82,5.82a21.83,21.83,0,0,0,12.95,4.27A21.66,21.66,0,0,0,61.6,53.33,21.43,21.43,0,0,0,58.71,26.59Z"/><path class="logo-c" d="M40,0A40,40,0,1,0,80,40,40,40,0,0,0,40,0Zm0,72A32,32,0,1,1,72,40,32,32,0,0,1,40,72Z"/><path class="logo-c" d="M100.5,22.5h-9V19h21.5v3.5h-9V49h-3.5Z"/><path class="logo-c" d="M117,19h3.5V49H117Z"/><path class="logo-c" d="M126.5,19H130l13.5,23.5V19h3.5V49h-3.5L130,25.5V49h-3.5Z"/><path class="logo-c" d="M153,19h18v3.5H156.5v9H169v3.5H156.5v10.5H171V49H153Z"/><path class="logo-c" d="M195,22.5h-9V19h21.5v3.5h-9V49H195Z"/><path class="logo-c" d="M211,34a15.5,15.5,0,1,1,15.5,15.5A15.5,15.5,0,0,1,211,34Zm27.5,0a12,12,0,1,0-12,12A12,12,0,0,0,238.5,34Z"/><path class="logo-c" d="M247,19h7.5c5.5,0,9,2.5,9,8,0,4-2,6.5-5.5,7.5L264,49h-4l-5.5-14H250.5V49H247Zm7,14c3.5,0,6-1.5,6-6s-2.5-5.5-6-5.5H250.5V33Z"/><path class="logo-c" d="M269,19h3.5V49H269Z"/><path class="logo-c" d="M278,19h3.5l8,16.5L297.5,19H298l-12,24.5V49h-3.5V43.5Z"/></svg>
+  </a>
+  <ul class="nl">
+    <li><a href="../chi-sono/">Chi sono</a></li>
+    <li><a href="../escursioni/">Escursioni</a></li>
+    <li><a href="../index.html#gallery">Gallery</a></li>
+    <li><a href="../index.html#recensioni">Recensioni</a></li>
+    <li><a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20un%27escursione%20con%20Time%20to%20Hike%20in%20Sardinia.%20Puoi%20darmi%20informazioni?" class="cta" target="_blank" rel="noopener">Prenota</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <span class="lbl">Sardegna autentica</span>
+  <h1>Escursioni <em>in programma</em></h1>
+  <p>Percorsi selezionati nell'Ogliastra e nel Supramonte. Gruppi piccoli, guida certificata AIGAE.</p>
+</div>
+
+<section style="background:var(--sand2)">
+  <div class="si">
+    <span class="lbl">Prossime uscite</span>
+    <h2 class="h2">Escursioni <em>disponibili</em></h2>
+    <div class="div"></div>
+
+    <!-- Cala Mudaloru -->
+    <div class="ecard" style="margin-top:1.8rem">
+      <div class="ecard-side">
+        <div class="ecard-side-bg" style="background-image:url('../gallery/IMG-20260505-WA0012.jpg')"></div>
+        <div class="emonth">Maggio 2026</div>
+        <div class="edate-big">24</div>
+      </div>
+      <div class="ebody">
+        <div>
+          <span class="etag">Giornaliera &middot; Baunei, Ogliastra</span>
+          <h3 class="etitle">Trekking a Cala Mudaloru</h3>
+          <p class="eloc">&#128205; Golgo di Baunei, Ogliastra</p>
+          <p class="edesc">Dal parcheggio di Piredda si entra nel cuore più selvaggio del Supramonte, lungo un bacu che scende verso il mare tra rocce calcaree e macchia mediterranea. Il sentiero cambia volto man mano: ci si addentra nel canyon, le pareti si stringono, la discesa si fa tecnica tra pietraie, roccia affiorante e scale fustes. Poi, all'improvviso, appare Cala Mudaloru: selvaggia, silenziosa, senza filtri.</p>
+          <div class="mpills">
+            <span class="mp">~11 km</span><span class="mp">550 m dislivello salita</span><span class="mp">7-8 ore</span>
+            <span class="mp">Grado CAI: EE</span><span class="mp">Difficoltà &#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mp">Max 20 posti</span>
+          </div>
+          <div class="mpills">
+            <span class="mp">Ritrovo ore 08:00 &mdash; Bar Baunei</span>
+          </div>
+        </div>
+        <div class="price-row">
+          <div><div class="psub">Quota a persona</div><div class="ptag">&euro;25</div></div>
+          <div class="eacts">
+            <a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20il%20Trekking%20a%20Cala%20Mudaloru%20del%2024%20Maggio.%20Puoi%20darmi%20informazioni?" class="bsm bsmp" target="_blank" rel="noopener">Prenota ora</a>
+            <a href="cala-mudaloru/" class="bsm bsmd">Dettagli</a>
+            <a href="https://fb.me/e/7yCnp4u9h" target="_blank" rel="noopener" class="bsm bsmg">Info su Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cala Mariolu -->
+    <div class="ecard" style="margin-top:1.8rem">
+      <div class="ecard-side">
+        <div class="ecard-side-bg" style="background-image:url('../gallery/Immagine WhatsApp 2025-05-27 ore 11.20.45_8e4be5a8.jpg')"></div>
+        <div class="emonth">Giugno 2026</div>
+        <div class="edate-big">07</div>
+      </div>
+      <div class="ebody">
+        <div>
+          <span class="etag">Giornaliera &middot; Baunei, Ogliastra</span>
+          <h3 class="etitle">Trekking a Cala Mariolu</h3>
+          <p class="eloc">&#128205; Costa di Orosei, Baunei</p>
+          <p class="edesc">Cala Mariolu, soprannominata <em>Is Pùligi de Nie</em> (le pulci di neve) per i suoi sassolini bianchi e rosa, è uno dei luoghi più iconici della Sardegna. Grandi falesie fino a 500 metri a picco sul mare, passaggi tecnici su scale fustes e discese in pietraia rendono questa escursione indimenticabile.</p>
+          <div class="mpills">
+            <span class="mp">~13 km</span><span class="mp">660 m dislivello</span><span class="mp">7-8 ore</span>
+            <span class="mp">Grado CAI: EE</span><span class="mp">Difficoltà &#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mp">Max 20 posti</span>
+          </div>
+          <div class="mpills">
+            <span class="mp">Ritrovo ore 05:45 &mdash; Conad Quartu</span>
+          </div>
+        </div>
+        <div class="price-row">
+          <div><div class="psub">Quota a persona</div><div class="ptag">&euro;25</div></div>
+          <div class="eacts">
+            <a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20il%20Trekking%20a%20Cala%20Mariolu%20del%207%20Giugno.%20Puoi%20darmi%20informazioni?" class="bsm bsmp" target="_blank" rel="noopener">Prenota ora</a>
+            <a href="cala-mariolu/" class="bsm bsmd">Dettagli</a>
+            <a href="https://fb.me/e/5LAN1iHyR" target="_blank" rel="noopener" class="bsm bsmg">Info su Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience Pastore -->
+    <div class="ecard" style="margin-top:1.8rem">
+      <div class="ecard-side">
+        <div class="ecard-side-bg" style="background-image:url('../gallery/experience-pastore-collage.jpg')"></div>
+        <div class="emonth">Giugno 2026</div>
+        <div class="edate-big">20&ndash;21</div>
+      </div>
+      <div class="ebody">
+        <div>
+          <span class="etag">Weekend Experience &middot; 2 giorni</span>
+          <h3 class="etitle">Experience dal Pastore 2.0<br>+ Trekking a Cala Fenile</h3>
+          <p class="eloc">&#128205; Baunei, Ogliastra</p>
+          <p class="edesc">Cena autentica dal pastore Davide con prodotti di propria produzione, pernotto in pinnetti tradizionali o tenda sotto un cielo stellato. All'alba: mungitura delle capre, lavorazione del formaggio e ricotta fresca. Poi il trekking verso Cala Fenile — una piccola spiaggia di ciottoli davanti a Punta Giradili e Pedra Longa.</p>
+          <div class="mpills">
+            <span class="mp">~6,5 km</span><span class="mp">300 m dislivello</span><span class="mp">~6 ore percorso</span>
+            <span class="mp">Grado CAI: E</span><span class="mp">Difficoltà &#9733;&#9733;&#9734;&#9734;&#9734;</span><span class="mp">Posti limitati</span>
+          </div>
+        </div>
+        <div class="price-row">
+          <div><div class="psub">Quota a persona</div><div class="ptag">&euro;85</div></div>
+          <div class="eacts">
+            <a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20l%27Experience%20dal%20Pastore%202.0.%20Puoi%20darmi%20informazioni?" class="bsm bsmp" target="_blank" rel="noopener">Prenota ora</a>
+            <a href="experience-pastore/" class="bsm bsmd">Dettagli</a>
+            <a href="https://fb.me/e/7KJ6QMNe1" target="_blank" rel="noopener" class="bsm bsmg">Info su Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center;color:var(--warm-mid);font-size:.86rem;font-style:italic;margin-top:1.3rem">Nuove escursioni sempre in calendario &mdash; seguimi su <a href="https://www.facebook.com/share/1DozFUoWRK/" target="_blank" style="color:var(--gold-dk)">Facebook</a> e <a href="https://www.instagram.com/timetohikeinsardinia/" target="_blank" style="color:var(--gold-dk)">Instagram</a> per non perdere le prossime uscite.</p>
+  </div>
+</section>
+
+<section class="storico">
+  <div class="si">
+    <span class="lbl">Memoria del percorso</span>
+    <h2 class="h2">Storico <em>escursioni passate</em></h2>
+    <div class="div"></div>
+    <div class="st-grid">
+      <div class="st-card"><div class="st-date">Maggio 2025</div><div class="st-title">Experience dal Pastore &mdash; Prima edizione</div><div class="st-meta">Baunei, Ogliastra &middot; 2 giorni</div><div class="st-badge">Completata</div></div>
+      <div class="st-card"><div class="st-date">Aprile 2025</div><div class="st-title">Trekking Cala Goloritè</div><div class="st-meta">Baunei &middot; Giornaliera &middot; CAI EE</div><div class="st-badge">Completata</div></div>
+      <div class="st-card"><div class="st-date">Marzo 2025</div><div class="st-title">Supramonte di Oliena</div><div class="st-meta">Oliena, Nuoro &middot; Giornaliera</div><div class="st-badge">Completata</div></div>
+      <div class="st-card"><div class="st-date">Febbraio 2025</div><div class="st-title">Gorropu Canyon Invernale</div><div class="st-meta">Urzulei &middot; Giornaliera &middot; CAI E</div><div class="st-badge">Completata</div></div>
+      <div class="st-card"><div class="st-date">Dicembre 2024</div><div class="st-title">Trekking Natalizio &mdash; Gennargentu</div><div class="st-meta">Fonni &middot; Giornaliera</div><div class="st-badge">Completata</div></div>
+      <div class="st-card"><div class="st-date">Ottobre 2024</div><div class="st-title">Autunno in Barbagia &mdash; Trekking &amp; Sagre</div><div class="st-meta">Barbagia &middot; Weekend</div><div class="st-badge">Completata</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="color:rgba(255,255,255,.65);font-size:.78rem;line-height:1.7">Andrea Saba &middot; Guida Ambientale Escursionistica AIGAE SA647<br>P.IVA 04137780922 &middot; Sardegna, Italia</div>
+  <div class="f-links">
+    <a href="https://www.aigae.org" target="_blank" rel="noopener">AIGAE</a>
+    <a href="https://www.facebook.com/share/1DozFUoWRK/" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.instagram.com/timetohikeinsardinia/" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:info@timetohikeinsardinia.com">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
