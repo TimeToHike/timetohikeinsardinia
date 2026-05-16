@@ -137,25 +137,25 @@ nav.scrolled .nl a{color:var(--brown)}
 .lb-x{position:absolute;top:1.4rem;right:1.8rem;font-size:2.2rem;color:white;cursor:pointer;background:none;border:none;opacity:.65;transition:opacity .2s}
 .lb-x:hover{opacity:1}
 
-/* ── INSTAGRAM ── */
-.insta{background:var(--cream)}
-.insta-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.8rem;flex-wrap:wrap;gap:1rem}
-.ih{display:flex;align-items:center;gap:1rem}
-.ig-icon{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ig-icon svg{width:22px;fill:white}
-.ig-name{font-family:var(--fd);font-size:1.3rem;font-weight:400;color:var(--near-black)}
-.ig-sub{font-size:.76rem;color:var(--warm-mid)}
-.ig-follow{display:inline-flex;align-items:center;gap:.45rem;background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);color:white;padding:.58rem 1.4rem;border-radius:24px;text-decoration:none;font-size:.78rem;letter-spacing:.04em;transition:opacity .2s}
-.ig-follow:hover{opacity:.84}
-.ig-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
-.ig-post{aspect-ratio:1;background:var(--stone);border-radius:2px;overflow:hidden;position:relative;cursor:pointer;transition:transform .2s}
-.ig-post:hover{transform:scale(1.04);z-index:2}
-.ig-post img{width:100%;height:100%;object-fit:cover;display:block}
-.ig-ph{width:100%;height:100%;background:linear-gradient(135deg,var(--sand2),var(--stone));display:flex;align-items:center;justify-content:center}
-.ig-ph svg{width:20px;opacity:.35;stroke:var(--warm-mid);fill:none;stroke-width:1.3}
-.ig-ov{position:absolute;inset:0;background:rgba(28,22,18,.4);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
-.ig-post:hover .ig-ov{opacity:1}
-.ig-ov svg{width:22px;fill:white}
+/* ── YOUTUBE ── */
+.yt-section{background:var(--near-black)}
+.yt-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.yt-brand{display:flex;align-items:center;gap:1rem}
+.yt-icon{width:48px;height:48px;border-radius:50%;background:#FF0000;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.yt-icon svg{width:22px;fill:white}
+.yt-name{font-family:var(--fd);font-size:1.3rem;font-weight:400;color:var(--white)}
+.yt-sub{font-size:.76rem;color:rgba(255,255,255,.5)}
+.yt-btn{display:inline-flex;align-items:center;gap:.5rem;background:#FF0000;color:white;padding:.58rem 1.4rem;border-radius:24px;text-decoration:none;font-size:.78rem;letter-spacing:.04em;transition:opacity .2s;white-space:nowrap}
+.yt-btn:hover{opacity:.84}
+.yt-btn svg{width:14px;fill:white}
+.yt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.yt-card{background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.yt-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.yt-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.yt-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.yt-card-info{padding:.9rem 1rem}
+.yt-card-title{font-size:.88rem;color:rgba(255,255,255,.88);line-height:1.4;font-weight:400}
+.yt-card-year{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.3rem}
 
 /* ── REVIEWS ── */
 .reviews{background:var(--near-black)}
@@ -225,16 +225,68 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
 @keyframes sp{0%,100%{opacity:.3}50%{opacity:.82}}
 @keyframes wai{from{opacity:0;transform:translateY(18px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
 
+
+/* ── HAMBURGER ── */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;z-index:300}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all .3s ease}
+nav.scrolled .hamburger span{background:var(--dark-brown)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(28,22,18,.97);z-index:250;flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:rgba(255,255,255,.88);text-decoration:none;font-size:1.2rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;transition:color .2s;font-family:var(--fd)}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu .cta-m{background:var(--gold);color:var(--white)!important;padding:.75rem 2rem;border-radius:2px;font-size:.85rem;font-family:var(--fb)!important;font-weight:500!important;letter-spacing:.1em;margin-top:1rem}
+
 /* ── MOBILE ── */
 @media(max-width:860px){
-nav{padding:1rem 1.5rem}nav.scrolled{padding:.7rem 1.5rem}.nl{display:none}
-.si{padding:3.8rem 1.5rem}.about-grid,.ct-grid{grid-template-columns:1fr;gap:2.2rem}
-.aimg{height:240px}.ecard{grid-template-columns:1fr}.ecard-side{min-height:170px}
-.gal-grid{grid-template-columns:repeat(2,1fr)}.gal-item:first-child{grid-column:span 2;min-height:200px}
-.ig-grid{grid-template-columns:repeat(3,1fr)}
-footer{flex-direction:column;text-align:center;padding:1.8rem 1.5rem}
-.wa-f span{display:none}.wa-f{padding:.82rem;border-radius:50%}
+nav{padding:1rem 1.5rem}
+nav.scrolled{padding:.7rem 1.5rem}
+.nl{display:none}
+.hamburger{display:flex}
+.nav-logo img{height:40px}
+.si{padding:3.5rem 1.2rem}
+.h2{font-size:clamp(1.7rem,6vw,2.4rem)}
+.about-grid,.ct-grid{grid-template-columns:1fr;gap:2rem}
+.aimg{height:260px}
+.ecard{grid-template-columns:1fr}
+.ecard-side{min-height:200px}
+.ecard-side-bg{opacity:.85}
+.ebody{padding:1.4rem}
+.etitle{font-size:1.4rem}
+.edesc{font-size:.88rem}
+.mpills{gap:.35rem}
+.mp{font-size:.68rem;padding:.22rem .65rem}
+.price-row{flex-direction:column;align-items:flex-start;gap:.75rem}
+.eacts{width:100%}
+.bsm{text-align:center;flex:1;padding:.65rem .8rem;font-size:.72rem}
+.gal-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+.gal-item:first-child{grid-column:span 2;min-height:200px}
+.yt-grid{grid-template-columns:1fr}
+.nums{flex-direction:row;flex-wrap:wrap}
+.num-item{min-width:33%;border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
+.f-links{justify-content:center;flex-wrap:wrap;gap:1rem}
+.wa-f span{display:none}
+.wa-f{padding:.82rem;border-radius:50%}
+.hero-content{padding:7rem 1.5rem 3rem}
+.hero-btns{flex-direction:column;align-items:center}
+.btn-p,.btn-g{width:100%;max-width:320px;text-align:center}
+.vals-grid{grid-template-columns:1fr;gap:1.2rem}
+.cert-grid{grid-template-columns:1fr 1fr;gap:.8rem}
+.content-grid{grid-template-columns:1fr}
+.info-card{position:static;margin-top:2rem}
+.pills-hero{gap:.4rem}
+.ph{font-size:.68rem;padding:.25rem .7rem}
 }
+
+@media(max-width:420px){
+.cert-grid{grid-template-columns:1fr}
+.gal-grid{grid-template-columns:1fr}
+.gal-item:first-child{grid-column:span 1}
+}
+
 </style>
 <!-- Cookie Consent + Analytics -->
 <script>
@@ -322,6 +374,7 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.5rem}
 
 <!-- NAV -->
 <nav id="nav">
+<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <a href="#home" class="nav-logo" aria-label="Time to Hike in Sardinia"><img src="TTH-logo-web-nero.svg" alt="Time to Hike in Sardinia" style="height:50px;width:auto"></a>
   <ul class="nl">
     <li><a href="chi-sono/">Chi sono</a></li>
@@ -601,24 +654,47 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.5rem}
   </div>
 </section>
 
-<!-- INSTAGRAM -->
-<section class="insta" id="instagram">
+<!-- YOUTUBE -->
+<section class="yt-section" id="video">
   <div class="si">
-    <div class="insta-top">
-      <div class="ih">
-        <div class="ig-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
-        <div><div class="ig-name">@timetohikeinsardinia</div><div class="ig-sub">Seguici su Instagram per foto e stories dal vivo</div></div>
+    <div class="yt-top">
+      <div class="yt-brand">
+        <div class="yt-icon">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <div>
+          <div class="yt-name">Time to Hike in Sardinia</div>
+          <div class="yt-sub">I nostri video dal vivo sul canale YouTube</div>
+        </div>
       </div>
-      <a href="https://www.instagram.com/timetohikeinsardinia/" target="_blank" rel="noopener" class="ig-follow">
-        <svg viewBox="0 0 24 24" style="width:13px;fill:white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919z"/></svg>
-        Seguici
+      <a href="https://www.youtube.com/@timetohikeinsardinia" target="_blank" rel="noopener" class="yt-btn">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Tutti i video
       </a>
     </div>
-    <div style="margin-top:1rem">
-    <!-- Elfsight Instagram Feed — caricato solo quando visibile -->
-    <div id="elfsight-container" class="elfsight-app-d5b68d84-c636-4323-874e-dc3dc4818c28" data-elfsight-app-lazy></div>
+    <div class="yt-grid">
+      <div class="yt-card">
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/qzH4i6YyCFc" title="Trekking al Canyon di Gorropu" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="yt-card-info"><div class="yt-card-title">Trekking al Canyon di Gorropu</div><div class="yt-card-year">2025</div></div>
+      </div>
+      <div class="yt-card">
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/gtqR2UdV3nw" title="Trekking a Su Fossu de Su Para" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="yt-card-info"><div class="yt-card-title">Trekking a Su Fossu de Su Para</div><div class="yt-card-year">2025</div></div>
+      </div>
+      <div class="yt-card">
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/jztUGwBmm4A" title="Alba a Punta la Marmora" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="yt-card-info"><div class="yt-card-title">Alba a Punta la Marmora</div><div class="yt-card-year">2024</div></div>
+      </div>
+      <div class="yt-card">
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/qYfAvhpGTPY" title="Trekking a Cala Biriola" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="yt-card-info"><div class="yt-card-title">Trekking a Cala Biriola</div><div class="yt-card-year">2024</div></div>
+      </div>
+      <div class="yt-card">
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/cXrpIGZSDO4" title="Alba a Cala Luna — Kayak" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="yt-card-info"><div class="yt-card-title">Alba a Cala Luna — Kayak</div><div class="yt-card-year">2024</div></div>
+      </div>
+    </div>
   </div>
-</div>
 </section>
 
 <!-- RECENSIONI -->
@@ -716,11 +792,12 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.5rem}
       </svg>
     </a>
   </div>
-  <div class="f-info" style="color:rgba(255,255,255,.65)">Andrea Saba &middot; Guida Ambientale Escursionistica AIGAE SA647<br>P.IVA 04137780922 &middot; Sardegna, Italia</div>
+  <div class="f-info" style="color:rgba(255,255,255,.65)">Andrea Saba &middot; Guida Ambientale Escursionistica AIGAE SA647<br>P.IVA 04137780922 &middot; Sardegna, Italia<br>&copy; Time to Hike in Sardinia 2024</div>
   <div class="f-links">
     <a href="https://www.aigae.org" target="_blank" rel="noopener">AIGAE</a>
     <a href="https://www.facebook.com/share/1DozFUoWRK/" target="_blank" rel="noopener">Facebook</a>
     <a href="https://www.instagram.com/timetohikeinsardinia/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.youtube.com/@timetohikeinsardinia" target="_blank" rel="noopener">YouTube</a>
     <a href="mailto:info@timetohikeinsardinia.com">Email</a>
   </div>
 </footer>
@@ -767,6 +844,25 @@ document.getElementById('send-btn').addEventListener('click',()=>{
   const s=encodeURIComponent('Richiesta informazioni – Time to Hike in Sardinia');
   window.location.href='mailto:info@timetohikeinsardinia.com?subject='+s+'&body='+b;
 });
+// Hamburger menu
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+if(hamburger && mobileMenu){
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
 </script>
 </body>
 </html>
