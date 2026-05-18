@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="description" content="Time to Hike in Sardinia — Guida Ambientale Escursionistica professionale. Escursioni autentiche nella Sardegna più vera. Andrea Saba, AIGAE SA647.">
 <title>Time to Hike in Sardinia</title>
+<link rel="preload" as="image" href="hero_poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -449,7 +450,7 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
 <!-- NAV -->
 <nav id="nav">
 <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  <a href="/" class="nav-logo" aria-label="Time to Hike in Sardinia"><img src="TTH-logo-web-nero.svg" alt="Time to Hike in Sardinia" style="height:50px;width:auto"></a>
+  <a href="/" class="nav-logo" aria-label="Time to Hike in Sardinia"><img src="TTH-logo-web-nero.svg" alt="Time to Hike in Sardinia" width="180" height="50" style="height:50px;width:auto"></a>
   <ul class="nl">
     <li><a href="/chi-sono/">Chi sono</a></li>
     <li><a href="/escursioni/">Escursioni</a></li>
@@ -472,7 +473,7 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <video autoplay muted loop playsinline poster="hero_poster.jpg">
+    <video autoplay muted loop playsinline poster="hero_poster.jpg" preload="none">
       <source src="hero_video.mp4" type="video/mp4">
     </video>
   </div>
@@ -708,73 +709,73 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
       <!-- 1 grande: silhouette tramonto -->
       <div class="gal-item" style="grid-column:span 2;grid-row:span 2;aspect-ratio:auto;min-height:380px"
            onclick="openLb('gallery/20240317_181142-01.jpg')">
-        <img loading="lazy" src="gallery/20240317_181142-01.jpg" alt="Tramonto in vetta" loading="lazy" decoding="async">
+        <img src="/gallery/20240317_181142-01.jpg" alt="Tramonto in vetta" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 2 cala bianca drone -->
       <div class="gal-item" onclick="openLb('gallery/dji_fly_20231008_143112_516_1696768327604_photo-01.jpg')">
-        <img loading="lazy" src="gallery/dji_fly_20231008_143112_516_1696768327604_photo-01.jpg" alt="Cala bianca drone" loading="lazy" decoding="async">
+        <img src="/gallery/dji_fly_20231008_143112_516_1696768327604_photo-01.jpg" alt="Cala bianca drone" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 3 kayak nella fessura -->
       <div class="gal-item" onclick="openLb('gallery/1000188061.jpg')">
-        <img loading="lazy" src="gallery/1000188061.jpg" alt="Kayak tra le rocce" loading="lazy" decoding="async" style="object-position:center 30%">
+        <img src="/gallery/1000188061.jpg" alt="Kayak tra le rocce" loading="lazy" decoding="async" style="object-position:center 30%">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 4 grotta tramonto spiaggia -->
       <div class="gal-item" onclick="openLb('gallery/20230617_111508-01.jpg')">
-        <img loading="lazy" src="gallery/20230617_111508-01.jpg" alt="Tramonto dalla grotta" loading="lazy" decoding="async">
+        <img src="/gallery/20230617_111508-01.jpg" alt="Tramonto dalla grotta" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 5 gruppo panorama montagna+mare -->
       <div class="gal-item" onclick="openLb('gallery/20241013_135419.jpg')">
-        <img loading="lazy" src="gallery/20241013_135419.jpg" alt="Gruppo in escursione" loading="lazy" decoding="async">
+        <img src="/gallery/20241013_135419.jpg" alt="Gruppo in escursione" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 6 tazza Time to Hike al tramonto -->
       <div class="gal-item" onclick="openLb('gallery/1000170839.jpg')">
-        <img loading="lazy" src="gallery/1000170839.jpg" alt="Time to Hike in Sardinia" loading="lazy" decoding="async">
+        <img src="/gallery/1000170839.jpg" alt="Time to Hike in Sardinia" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 7 pinnacolo medievale -->
       <div class="gal-item" onclick="openLb('gallery/20240406_121722-01.jpg')">
-        <img loading="lazy" src="gallery/20240406_121722-01.jpg" alt="Pinnacolo di pietra Ogliastra" loading="lazy" decoding="async">
+        <img src="/gallery/20240406_121722-01.jpg" alt="Pinnacolo di pietra Ogliastra" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 8 cala turchese con grotta -->
       <div class="gal-item" onclick="openLb('gallery/1000453207.jpg')">
-        <img loading="lazy" src="gallery/1000453207.jpg" alt="Cala turchese con grotta" loading="lazy" decoding="async">
+        <img src="/gallery/1000453207.jpg" alt="Cala turchese con grotta" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 9 drone cala con isolotto -->
       <div class="gal-item" onclick="openLb('gallery/dji_fly_20231008_143402_528_1696768515062_photo-01.jpg')">
-        <img loading="lazy" src="gallery/dji_fly_20231008_143402_528_1696768515062_photo-01.jpg" alt="Cala con isolotto drone" loading="lazy" decoding="async">
+        <img src="/gallery/dji_fly_20231008_143402_528_1696768515062_photo-01.jpg" alt="Cala con isolotto drone" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 10 costa ogliastrina -->
       <div class="gal-item" onclick="openLb('gallery/20230617_085346-01.jpg')">
-        <img loading="lazy" src="gallery/20230617_085346-01.jpg" alt="Costa ogliastrina" loading="lazy" decoding="async">
+        <img src="/gallery/20230617_085346-01.jpg" alt="Costa ogliastrina" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 11 Su Fossu e Su Para cascata -->
       <div class="gal-item" onclick="openLb('gallery/Su_Para.jpg')">
-        <img loading="lazy" src="gallery/Su_Para.jpg" alt="Su Fossu e Su Para, cascata" loading="lazy" decoding="async">
+        <img src="/gallery/Su_Para.jpg" alt="Su Fossu e Su Para, cascata" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
       <!-- 12 ranocchia tra le rocce -->
       <div class="gal-item" onclick="openLb('gallery/Ranocchia.jpg')">
-        <img loading="lazy" src="gallery/Ranocchia.jpg" alt="Ranocchia tra le rocce" loading="lazy" decoding="async">
+        <img src="/gallery/Ranocchia.jpg" alt="Ranocchia tra le rocce" loading="lazy" decoding="async">
         <div class="gal-ov"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       </div>
 
