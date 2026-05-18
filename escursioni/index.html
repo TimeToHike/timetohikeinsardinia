@@ -43,7 +43,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .h2 em{font-style:italic;color:var(--gold-dk)}
 .div{width:42px;height:1px;background:var(--gold);margin-bottom:2.2rem}
 
-.ecard{background:var(--white);border-radius:3px;overflow:hidden;box-shadow:0 4px 36px rgba(58,46,38,.09);display:grid;grid-template-columns:260px 1fr;margin-bottom:1.8rem}
+.ecard{background:var(--white);border-radius:3px;overflow:hidden;box-shadow:0 4px 36px rgba(58,46,38,.09);display:grid;grid-template-columns:260px 1fr;margin-bottom:1.8rem;transition:transform .25s,box-shadow .25s}
+.ecard:hover{transform:translateY(-4px);box-shadow:0 12px 48px rgba(58,46,38,.15)}
 .ecard-side{background:linear-gradient(to top,rgba(28,22,18,.85) 0%,rgba(28,22,18,.18) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem;position:relative;overflow:hidden;min-height:280px}
 .ecard-side-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.8}
 .edate-big{position:relative;z-index:1;font-family:var(--fd);font-size:3.2rem;font-weight:600;color:var(--white);line-height:1;text-shadow:0 2px 12px rgba(0,0,0,.7)}
@@ -59,7 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .ptag{font-family:var(--fd);font-size:2.3rem;font-weight:400;color:var(--gold-dk);line-height:1}
 .psub{font-size:.66rem;color:var(--warm-mid);letter-spacing:.08em;text-transform:uppercase}
 .eacts{display:flex;gap:.75rem;flex-wrap:wrap}
-.bsm{padding:.58rem 1.3rem;border-radius:2px;font-size:.76rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;display:inline-block}
+.bsm{padding:.58rem 1.3rem;border-radius:2px;font-size:.76rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;display:inline-block;cursor:pointer;border:none;font-family:var(--fb)}
 .bsmp{background:var(--gold);color:var(--white)}
 .bsmp:hover{background:var(--gold-dk)}
 .bsmg{border:1px solid var(--stone);color:var(--brown);background:transparent}
@@ -77,39 +78,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .st-meta{font-size:.78rem;color:var(--warm-mid)}
 .st-badge{display:inline-block;background:var(--sage-light);color:var(--white);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.16rem .52rem;border-radius:2px;margin-top:.7rem}
 
-footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.f-links{display:flex;gap:1.5rem}
-.f-links a{color:rgba(255,255,255,.45);text-decoration:none;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
-.f-links a:hover{color:var(--gold)}
-
-@media(max-width:768px){
-  nav{padding:.9rem 1.5rem}
-  .page-hero{padding:8rem 1.5rem 3.5rem}
-  .si{padding:4rem 1.5rem}
-  .ecard{grid-template-columns:1fr}
-  .ecard-side{min-height:200px}
-  footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}
-  .f-links{justify-content:center;flex-wrap:wrap}
-}
-
-/* ── MOBILE OVERFLOW FIX ── */
-@media(max-width:860px){
-  html,body{overflow-x:hidden;max-width:100vw}
-  .nums{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
-  .num-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding:1.5rem 1rem}
-  .num-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.06)}
-  nav{padding:.9rem 1.2rem}
-  nav.scrolled{padding:.7rem 1.2rem}
-  .nav-logo img{height:36px;max-width:140px}
-  .si{padding:3rem 1.2rem;overflow-x:hidden}
-  .ecard-side{overflow:hidden}
-  .mpills{overflow-x:hidden}
-}
-@media(max-width:400px){
-  .nums{grid-template-columns:1fr}
-  .num-item{border-right:none}
-  .num-item:nth-child(odd){border-right:none}
-}
+/* ── FOOTER ── */
+footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.3rem;border-top:1px solid rgba(196,151,90,0.2)}
+.f-brand{--logo-color:#ffffff}
+.f-brand svg{width:180px}
+.f-info{font-size:.72rem;color:rgba(255,255,255,.72);line-height:1.8;text-align:center}
+.f-links{display:flex;gap:1.3rem}
+.f-links a{color:rgba(255,255,255,.65);font-size:.71rem;text-decoration:none;letter-spacing:.07em;transition:color .2s}
+.f-links a:hover{color:var(--gold-lt)}
 
 /* ── HAMBURGER ── */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;z-index:300}
@@ -122,27 +98,42 @@ footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:c
 .mobile-menu a{color:rgba(255,255,255,.88);text-decoration:none;font-size:1.2rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;transition:color .2s;font-family:var(--fd)}
 .mobile-menu a:hover{color:var(--gold)}
 .mobile-menu .cta-m{background:var(--gold);color:var(--white)!important;padding:.75rem 2rem;border-radius:2px;font-size:.85rem;font-family:var(--fb)!important;font-weight:500!important;letter-spacing:.1em;margin-top:1rem}
+
 @media(max-width:860px){
+  html,body{overflow-x:hidden;max-width:100vw}
+  nav{padding:.9rem 1.2rem;background:rgba(250,247,242,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--stone)}
   .nl{display:none}
   .hamburger{display:flex}
-  nav{padding:.9rem 1.2rem;background:rgba(250,247,242,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--stone)}
   .nav-logo img{height:36px;max-width:160px}
-  html,body{overflow-x:hidden;max-width:100vw}
-  .si{padding:3rem 1.2rem}
+  .si{padding:3rem 1.2rem;overflow-x:hidden}
+  .page-hero{padding:8rem 1.5rem 3.5rem}
+  .ecard{grid-template-columns:1fr}
+  .ecard-side{min-height:200px;overflow:hidden}
+  .ebody{padding:1.4rem}
+  .etitle{font-size:1.4rem}
+  .edesc{font-size:.93rem}
+  .mpills{gap:.35rem;overflow-x:hidden}
+  .mp{font-size:.75rem;padding:.22rem .65rem}
+  .price-row{flex-direction:column;align-items:flex-start;gap:.75rem}
+  .eacts{width:100%}
+  .bsm{text-align:center;flex:1;padding:.65rem .8rem;font-size:.72rem}
+  footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
+  .f-links{justify-content:center;flex-wrap:wrap;gap:1rem}
 }
 </style>
 </head>
 <body>
 
 <nav id="nav">
-<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <a href="/" class="nav-logo" aria-label="Time to Hike in Sardinia"><img src="/TTH-logo-web-nero.svg" alt="Time to Hike in Sardinia" style="height:50px;width:auto"></a>
-  <ul class="nl"><li><a href="/">Home</a></li>
+  <ul class="nl">
+    <li><a href="/">Home</a></li>
     <li><a href="/chi-sono/">Chi sono</a></li>
     <li><a href="/escursioni/">Escursioni</a></li>
-    <li><a href="../index.html#gallery">Gallery</a></li>
-    <li><a href="../index.html#video">Video</a></li>
-    <li><a href="../index.html#recensioni">Recensioni</a></li>
+    <li><a href="/#gallery">Gallery</a></li>
+    <li><a href="/#video">Video</a></li>
+    <li><a href="/#recensioni">Recensioni</a></li>
     <li><a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20un%27escursione%20con%20Time%20to%20Hike%20in%20Sardinia.%20Puoi%20darmi%20informazioni?" class="cta" target="_blank" rel="noopener">Prenota</a></li>
   </ul>
 </nav>
@@ -169,9 +160,9 @@ footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:c
     <div class="div"></div>
 
     <!-- Cala Mudaloru -->
-    <div class="ecard" style="margin-top:1.8rem">
+    <div class="ecard">
       <div class="ecard-side">
-        <div class="ecard-side-bg" style="background-image:url('../gallery/IMG-20260505-WA0012.jpg')"></div>
+        <div class="ecard-side-bg" style="background-image:url('/gallery/IMG-20260505-WA0012.jpg')"></div>
         <div class="emonth">Maggio 2026</div>
         <div class="edate-big">24</div>
       </div>
@@ -193,7 +184,7 @@ footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:c
           <div><div class="psub">Quota a persona</div><div class="ptag">&euro;25</div></div>
           <div class="eacts">
             <a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20il%20Trekking%20a%20Cala%20Mudaloru%20del%2024%20Maggio.%20Puoi%20darmi%20informazioni?" class="bsm bsmp" target="_blank" rel="noopener">Prenota ora</a>
-            <a href="cala-mudaloru/" class="bsm bsmd">Dettagli</a>
+            <a href="/escursioni/cala-mudaloru/" class="bsm bsmd">Dettagli</a>
             <a href="https://fb.me/e/7yCnp4u9h" target="_blank" rel="noopener" class="bsm bsmg">Info su Facebook</a>
           </div>
         </div>
@@ -201,9 +192,9 @@ footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:c
     </div>
 
     <!-- Cala Mariolu -->
-    <div class="ecard" style="margin-top:1.8rem">
+    <div class="ecard">
       <div class="ecard-side">
-        <div class="ecard-side-bg" style="background-image:url('../gallery/Immagine WhatsApp 2025-05-27 ore 11.20.45_8e4be5a8.jpg')"></div>
+        <div class="ecard-side-bg" style="background-image:url('/gallery/cala-mariolu-trekking.jpg')"></div>
         <div class="emonth">Giugno 2026</div>
         <div class="edate-big">07</div>
       </div>
@@ -225,7 +216,7 @@ footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:c
           <div><div class="psub">Quota a persona</div><div class="ptag">&euro;25</div></div>
           <div class="eacts">
             <a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20il%20Trekking%20a%20Cala%20Mariolu%20del%207%20Giugno.%20Puoi%20darmi%20informazioni?" class="bsm bsmp" target="_blank" rel="noopener">Prenota ora</a>
-            <a href="cala-mariolu/" class="bsm bsmd">Dettagli</a>
+            <a href="/escursioni/cala-mariolu/" class="bsm bsmd">Dettagli</a>
             <a href="https://fb.me/e/5LAN1iHyR" target="_blank" rel="noopener" class="bsm bsmg">Info su Facebook</a>
           </div>
         </div>
@@ -233,9 +224,9 @@ footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:c
     </div>
 
     <!-- Experience Pastore -->
-    <div class="ecard" style="margin-top:1.8rem">
+    <div class="ecard">
       <div class="ecard-side">
-        <div class="ecard-side-bg" style="background-image:url('../gallery/experience-pastore-collage.jpg')"></div>
+        <div class="ecard-side-bg" style="background-image:url('/gallery/experience-pastore-collage.jpg')"></div>
         <div class="emonth">Giugno 2026</div>
         <div class="edate-big">20&ndash;21</div>
       </div>
@@ -254,7 +245,7 @@ footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:c
           <div><div class="psub">Quota a persona</div><div class="ptag">&euro;85</div></div>
           <div class="eacts">
             <a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20l%27Experience%20dal%20Pastore%202.0.%20Puoi%20darmi%20informazioni?" class="bsm bsmp" target="_blank" rel="noopener">Prenota ora</a>
-            <a href="experience-pastore/" class="bsm bsmd">Dettagli</a>
+            <a href="/escursioni/experience-pastore/" class="bsm bsmd">Dettagli</a>
             <a href="https://fb.me/e/7KJ6QMNe1" target="_blank" rel="noopener" class="bsm bsmg">Info su Facebook</a>
           </div>
         </div>
@@ -279,7 +270,7 @@ footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:c
       <div class="st-card"><div class="st-date">Maggio 2024</div><div class="st-title">Trekking da Capo Pecora a Scivu</div><div class="st-meta">Costa Verde &middot; Giornaliera &middot; CAI E</div><div class="st-badge">Completata</div></div>
     </div>
     <div style="text-align:center;margin-top:2rem">
-      <a href="https://www.facebook.com/TimeToHikeInSardinia/past_hosted_events" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;background:#1877F2;color:white;padding:.85rem 2rem;border-radius:3px;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:background .2s">
+      <a href="https://www.facebook.com/TimeToHikeInSardinia/past_hosted_events" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;background:#1877F2;color:white;padding:.85rem 2rem;border-radius:3px;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:opacity .2s">
         <svg viewBox="0 0 24 24" style="width:18px;fill:white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Vedi tutte le escursioni passate su Facebook
       </a>
@@ -288,19 +279,25 @@ footer{background:var(--dark-brown);padding:3rem 4rem;display:flex;align-items:c
 </section>
 
 <footer>
-  <div style="color:rgba(255,255,255,.85);font-size:.78rem;line-height:1.7">Andrea Saba &middot; Guida Ambientale Escursionistica AIGAE SA647<br>P.IVA 04137780922 &middot; Sardegna, Italia</div>
+  <div class="f-brand">
+    <a href="/" aria-label="Time to Hike in Sardinia">
+      <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" style="width:180px;height:auto">
+        <text x="0" y="55" font-family="Cormorant Garamond, Georgia, serif" font-size="38" font-weight="300" fill="var(--logo-color, #ffffff)">Time to Hike</text>
+        <text x="2" y="75" font-family="Jost, system-ui, sans-serif" font-size="13" font-weight="300" letter-spacing="4" fill="var(--logo-color, #ffffff)">IN SARDINIA</text>
+      </svg>
+    </a>
+  </div>
+  <div class="f-info">Andrea Saba &middot; Guida Ambientale Escursionistica AIGAE SA647<br>P.IVA 04137780922 &middot; Sardegna, Italia<br>&copy; Time to Hike in Sardinia 2024</div>
   <div class="f-links">
     <a href="https://www.aigae.org" target="_blank" rel="noopener">AIGAE</a>
-    <a href="https://www.facebook.com/TimeToHikeInSardinia/past_hosted_events" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.facebook.com/TimeToHikeInSardinia" target="_blank" rel="noopener">Facebook</a>
     <a href="https://www.instagram.com/timetohikeinsardinia/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.youtube.com/@timetohikeinsardinia" target="_blank" rel="noopener">YouTube</a>
     <a href="mailto:info@timetohikeinsardinia.com">Email</a>
   </div>
 </footer>
 
-
 <script>
-// Hamburger menu
-// Hamburger menu
 document.addEventListener('DOMContentLoaded', function() {
   var hamburger = document.getElementById('hamburger');
   var mobileMenu = document.getElementById('mobile-menu');
@@ -319,7 +316,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
 </script>
 </body>
 </html>
