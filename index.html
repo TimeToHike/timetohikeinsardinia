@@ -134,8 +134,11 @@ nav.scrolled .nl a{color:var(--brown)}
 .lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,8,6,.94);align-items:center;justify-content:center}
 .lb.open{display:flex}
 .lb img{max-width:90vw;max-height:85vh;border-radius:2px}
-.lb-x{position:absolute;top:1.4rem;right:1.8rem;font-size:2.2rem;color:white;cursor:pointer;background:none;border:none;opacity:.65;transition:opacity .2s}
+.lb-x{position:absolute;top:1.4rem;right:1.8rem;font-size:2.2rem;color:white;cursor:pointer;background:none;border:none;opacity:.65;transition:opacity .2s;z-index:10}
 .lb-x:hover{opacity:1}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);font-size:3rem;color:white;cursor:pointer;background:none;border:none;opacity:.65;transition:opacity .2s;z-index:10;padding:0 1.2rem;user-select:none}
+.lb-prev{left:0}.lb-next{right:0}
+.lb-prev:hover,.lb-next:hover{opacity:1}
 
 
 /* ── SOCIAL BAR ── */
@@ -435,9 +438,12 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
 </a>
 
 <!-- Lightbox -->
-<div class="lb" id="lb" onclick="this.classList.remove(\'open\')">
-  <button class="lb-x" onclick="event.stopPropagation();document.getElementById(\'lb\').classList.remove(\'open\')" aria-label="Chiudi">&#215;</button>
+<!-- Lightbox -->
+<div class="lb" id="lb">
+  <button class="lb-x" id="lb-close" onclick="closeLb()" aria-label="Chiudi">&#215;</button>
+  <button class="lb-prev" id="lb-prev" onclick="lbNav(-1)" aria-label="Precedente">&#8249;</button>
   <img id="lb-img" src="" alt="Gallery" onclick="event.stopPropagation()">
+  <button class="lb-next" id="lb-next" onclick="lbNav(1)" aria-label="Successiva">&#8250;</button>
 </div>
 
 <!-- NAV -->
@@ -1035,30 +1041,71 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
   obs.observe(target);
 })();
 
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
-
-function openLb(src){
-  document.getElementById('lb-img').src=src;
-  document.getElementById('lb').classList.add('open');
-}
-function closeLb(){
-  document.getElementById('lb').classList.remove('open');
-  document.getElementById('lb-img').src='';
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
-document.querySelector('.lb-x').addEventListener('click', closeLb);
-document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLb();});
-
-document.getElementById('send-btn').addEventListener('click',()=>{
-  const n=document.getElementById('nome').value;
-  const t=document.getElementById('tel').value;
-  const m=document.getElementById('msg').value;
-  const b=encodeURIComponent('Nome: '+n+'\nTelefono: '+t+'\n\n'+m);
-  const s=encodeURIComponent('Richiesta informazioni – Time to Hike in Sardinia');
-  window.location.href='mailto:info@timetohikeinsardinia.com?subject='+s+'&body='+b;
+window.addEventListener('scroll',function(){
+  var nav=document.getElementById('nav');
+  if(nav) nav.classList.toggle('scrolled',window.scrollY>60);
 });
-// Hamburger menu
+
+// Lightbox con navigazione
+var lbImages = [];
+var lbIndex = 0;
+var lbTouchStartX = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Raccogli tutte le immagini della gallery
+  lbImages = Array.from(document.querySelectorAll('.gal-item')).map(function(el) {
+    return el.getAttribute('onclick').match(/'([^']+)'/)[1];
+  });
+
+  
+  document.getElementById('lb').addEventListener('click', function(e){ if(e.target===this) closeLb(); });
+
+  // Swipe touch
+  var lbEl = document.getElementById('lb');
+  lbEl.addEventListener('touchstart', function(e){ lbTouchStartX = e.touches[0].clientX; }, {passive:true});
+  lbEl.addEventListener('touchend', function(e){
+    var diff = lbTouchStartX - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 50) lbNav(diff > 0 ? 1 : -1);
+  });
+});
+
+function openLb(src) {
+  lbIndex = lbImages.indexOf(src);
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLb() {
+  document.getElementById('lb').classList.remove('open');
+  document.getElementById('lb-img').src = '';
+  document.body.style.overflow = '';
+}
+
+function lbNav(dir) {
+  lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
+  document.getElementById('lb-img').src = lbImages[lbIndex];
+}
+
+document.addEventListener('keydown', function(e) {
+  var lb = document.getElementById('lb');
+  if(!lb || !lb.classList.contains('open')) return;
+  if(e.key === 'Escape') closeLb();
+  if(e.key === 'ArrowLeft') lbNav(-1);
+  if(e.key === 'ArrowRight') lbNav(1);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var sendBtn = document.getElementById('send-btn');
+  if(sendBtn) sendBtn.addEventListener('click', function(){
+    var n=document.getElementById('nome').value;
+    var t=document.getElementById('tel').value;
+    var m=document.getElementById('msg').value;
+    var b=encodeURIComponent('Nome: '+n+'\nTelefono: '+t+'\n\n'+m);
+    var s=encodeURIComponent('Richiesta informazioni – Time to Hike in Sardinia');
+    window.location.href='mailto:info@timetohikeinsardinia.com?subject='+s+'&body='+b;
+  });
+});
 // Hamburger menu
 document.addEventListener('DOMContentLoaded', function() {
   var hamburger = document.getElementById('hamburger');
