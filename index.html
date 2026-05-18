@@ -2,13 +2,14 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Time to Hike in Sardinia — Guida Ambientale Escursionistica professionale. Escursioni autentiche nella Sardegna più vera. Andrea Saba, AIGAE SA647.">
 <title>Time to Hike in Sardinia</title>
 <link rel="preload" as="image" href="hero_poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"></noscript>
 <style>
 :root{
   --cream:#faf7f2;--sand:#f0e9de;--sand2:#e4d9cb;--stone:#c8bbaa;
@@ -480,7 +481,7 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
   </div>
   <div class="hero-content">
     <p class="hero-eyebrow">Guida Ambientale Escursionistica &middot; AIGAE SA647</p>
-    <div class="hero-logo" aria-label="Time to Hike in Sardinia">
+    <div class="hero-logo" role="img" aria-label="Time to Hike in Sardinia">
       <svg viewBox="0 0 298.28 80" xmlns="http://www.w3.org/2000/svg">
 <defs><style>.logo-c{fill:var(--logo-color,#1c1612);}
 /* ── SCROLL INDICATOR ── */
@@ -958,7 +959,7 @@ footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
 <!-- FOOTER -->
 <footer>
   <div class="f-brand">
-    <a href="#home" style="text-decoration:none" aria-label="Time to Hike in Sardinia">
+    <a href="#home" style="text-decoration:none">
       <svg viewBox="0 0 298.28 80" xmlns="http://www.w3.org/2000/svg" style="--logo-color:#ffffff">
 <defs><style>.logo-c{fill:var(--logo-color,#1c1612);}
 /* ── SCROLL INDICATOR ── */
