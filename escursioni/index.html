@@ -182,6 +182,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .bsmd:hover{background:var(--stone)}
 
 .storico{background:var(--cream)}
+
+/* ── I NOSTRI PERCORSI ── */
+.percorsi{background:var(--sand)}
+.percorsi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.8rem;margin-top:2rem}
+.pcard{background:var(--white);border-radius:3px;overflow:hidden;box-shadow:0 4px 36px rgba(58,46,38,.09);transition:transform .25s,box-shadow .25s;text-decoration:none;display:block}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 12px 48px rgba(58,46,38,.15)}
+.pcard-img{height:220px;overflow:hidden;position:relative}
+.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pcard:hover .pcard-img img{transform:scale(1.05)}
+.pcard-tag{position:absolute;top:1rem;left:1rem;background:var(--gold);color:var(--white);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:.24rem .7rem;border-radius:2px}
+.pcard-body{padding:1.6rem}
+.pcard-title{font-family:var(--fd);font-size:1.5rem;font-weight:400;color:var(--near-black);line-height:1.2;margin-bottom:.4rem}
+.pcard-loc{font-size:.78rem;color:var(--brown);margin-bottom:.85rem}
+.pcard-desc{font-size:.88rem;color:var(--dark-brown);line-height:1.78;margin-bottom:1.2rem}
+.pcard-pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.pcard-pill{background:var(--sand);border:1px solid var(--stone);border-radius:20px;padding:.22rem .72rem;font-size:.7rem;color:var(--brown)}
+.pcard-cta{display:inline-block;background:var(--gold);color:var(--white);padding:.55rem 1.3rem;border-radius:2px;font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.pcard-cta:hover{background:var(--gold-dk)}
+@media(max-width:860px){.percorsi-grid{grid-template-columns:1fr}}
 .st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem}
 .st-card{background:var(--white);border:1px solid var(--stone);border-radius:3px;padding:1.5rem;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
 .st-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
@@ -394,6 +413,59 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
     </div>
 
     <p style="text-align:center;color:var(--warm-mid);font-size:.86rem;font-style:italic;margin-top:1.3rem">Nuove escursioni sempre in calendario &mdash; seguimi su <a href="https://www.facebook.com/TimeToHikeInSardinia/past_hosted_events" target="_blank" style="color:var(--gold-dk)">Facebook</a> e <a href="https://www.instagram.com/timetohikeinsardinia/" target="_blank" style="color:var(--gold-dk)">Instagram</a> per non perdere le prossime uscite.</p>
+  </div>
+</section>
+
+
+<section class="percorsi">
+  <div class="si">
+    <span class="lbl">Esplora la Sardegna</span>
+    <h2 class="h2">I nostri <em>percorsi</em></h2>
+    <div class="div"></div>
+    <p style="color:var(--brown);font-size:.95rem;max-width:600px;line-height:1.8;margin-bottom:0">Percorsi selezionati nel Supramonte e nella Costa di Orosei. Schede permanenti con tutto quello che devi sapere prima di partire.</p>
+    <div class="percorsi-grid">
+
+      <!-- Cala Mariolu -->
+      <a href="/escursioni/cala-mariolu/" class="pcard">
+        <div class="pcard-img">
+          <img src="/gallery/cala-mariolu-trekking.webp" alt="Trekking Cala Mariolu Costa di Orosei Baunei Ogliastra" loading="lazy">
+          <span class="pcard-tag">Grado CAI: EE</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-title">Trekking a Cala Mariolu</div>
+          <div class="pcard-loc">&#128205; Costa di Orosei, Baunei</div>
+          <p class="pcard-desc">Falesie a 500 metri a picco sul mare, l&rsquo;arco naturale di S&rsquo;Arcada Manna, scale fustes in ginepro. La cala pi&ugrave; famosa dell&rsquo;Ogliastra, raggiungibile solo a piedi.</p>
+          <div class="pcard-pills">
+            <span class="pcard-pill">~13 km</span>
+            <span class="pcard-pill">660 m dislivello</span>
+            <span class="pcard-pill">7-8 ore</span>
+            <span class="pcard-pill">EE</span>
+          </div>
+          <span class="pcard-cta">Scopri il percorso &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Cala Mudaloru -->
+      <a href="/escursioni/cala-mudaloru/" class="pcard">
+        <div class="pcard-img">
+          <img src="/gallery/IMG-20260505-WA0012.webp" alt="Trekking Cala Mudaloru Supramonte Baunei Ogliastra" loading="lazy">
+          <span class="pcard-tag">Grado CAI: EE</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-title">Trekking a Cala Mudaloru</div>
+          <div class="pcard-loc">&#128205; Golgo di Baunei, Ogliastra</div>
+          <p class="pcard-desc">Canyon calcareo, macchia mediterranea, una cala selvaggia senza bar n&eacute; ombrelloni. Il Supramonte pi&ugrave; vero, con una discesa tecnica che si guadagna ogni metro.</p>
+          <div class="pcard-pills">
+            <span class="pcard-pill">~11 km</span>
+            <span class="pcard-pill">550 m dislivello</span>
+            <span class="pcard-pill">7-8 ore</span>
+            <span class="pcard-pill">EE</span>
+          </div>
+          <span class="pcard-cta">Scopri il percorso &rarr;</span>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 
