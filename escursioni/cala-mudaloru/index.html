@@ -76,6 +76,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .breadcrumb a:hover{color:var(--gold)}
 .hero-exc-content .etag{display:inline-block;background:var(--gold);color:var(--white);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.26rem .75rem;border-radius:2px;margin-bottom:1rem}
 .hero-exc-content h1{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:.6rem}
+.hero-exc-content h1 em{font-style:italic;color:var(--gold-lt);font-size:.75em}
 .hero-exc-content .eloc{font-size:.88rem;color:rgba(255,255,255,.9);margin-bottom:1.5rem}
 .pills-hero{display:flex;flex-wrap:wrap;gap:.5rem}
 .ph{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:.3rem .9rem;font-size:.72rem;color:rgba(255,255,255,.85)}
@@ -103,7 +104,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .fb-note{background:rgba(24,119,242,.08);border-left:3px solid #1877F2;border-radius:2px;padding:1rem 1.2rem;margin-top:1.5rem;font-size:.82rem;color:var(--dark-brown);line-height:1.6}
 .fb-note strong{color:#1877F2}
 
-/* ── FOOTER ── */
 footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.3rem;border-top:1px solid rgba(196,151,90,0.2)}
 .f-brand{--logo-color:#ffffff}
 .f-brand svg{width:180px}
@@ -112,7 +112,6 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
 .f-links a{color:rgba(255,255,255,.65);font-size:.71rem;text-decoration:none;letter-spacing:.07em;transition:color .2s}
 .f-links a:hover{color:var(--gold-lt)}
 
-/* ── HAMBURGER ── */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;z-index:300}
 .hamburger span{display:block;width:24px;height:2px;background:var(--dark-brown);border-radius:2px;transition:all .3s ease}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -172,14 +171,15 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
   <div class="hero-exc-content">
     <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/escursioni/">Escursioni</a> &rsaquo; Cala Mudaloru</div>
     <span class="etag">Giornaliera &middot; Maggio 2026</span>
-    <h1>Trekking a<br>Cala Mudaloru</h1>
+    <h1>Trekking a Cala Mudaloru<br>
+<em>&mdash; 24 Maggio 2026</em></h1>
     <p class="eloc">&#128205; Golgo di Baunei, Ogliastra</p>
     <div class="pills-hero">
       <span class="ph">~11 km</span>
       <span class="ph">550 m dislivello</span>
       <span class="ph">7-8 ore</span>
       <span class="ph">Grado CAI: EE</span>
-      <span class="ph">Difficoltà &#9733;&#9733;&#9733;&#9733;&#9734;</span>
+      <span class="ph">Difficolt&agrave; &#9733;&#9733;&#9733;&#9733;&#9734;</span>
       <span class="ph">Max 20 posti</span>
     </div>
   </div>
@@ -193,9 +193,9 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
         <h2 class="h2">Nel cuore selvaggio del <em>Supramonte</em></h2>
         <div class="div"></div>
         <div class="body-text">
-          <p>Dal parcheggio di Piredda si entra nel cuore più selvaggio del Supramonte, lungo un bacu che scende verso il mare tra rocce calcaree e macchia mediterranea. Il sentiero cambia volto man mano: ci si addentra nel canyon, le pareti si stringono, la discesa si fa tecnica tra pietraie, roccia affiorante e scale fustes.</p>
-          <p>Poi, all'improvviso, appare Cala Mudaloru: selvaggia, silenziosa, senza filtri. Nessun bar, nessun ombrellone, nessuna barca di turisti. Solo roccia, mare e il suono del vento tra le pareti calcaree.</p>
-          <p>Il rientro si guadagna tutto con una risalita lunga e costante. Adatta a chi è in ottima forma fisica e ha familiarità con passaggi tecnici. Non è un'escursione per principianti.</p>
+          <p>Dal parcheggio di Piredda si entra nel cuore pi&ugrave; selvaggio del Supramonte, lungo un bacu che scende verso il mare tra rocce calcaree e macchia mediterranea. Il sentiero cambia volto man mano: ci si addentra nel canyon, le pareti si stringono, la discesa si fa tecnica tra pietraie, roccia affiorante e scale fustes.</p>
+          <p>Poi, all&rsquo;improvviso, appare Cala Mudaloru: selvaggia, silenziosa, senza filtri. Nessun bar, nessun ombrellone, nessuna barca di turisti. Solo roccia, mare e il suono del vento tra le pareti calcaree.</p>
+          <p>Il rientro si guadagna tutto con una risalita lunga e costante. Adatta a chi &egrave; in ottima forma fisica e ha familiarit&agrave; con passaggi tecnici. Non &egrave; un&rsquo;escursione per principianti.</p>
         </div>
 
         <div style="margin-top:2.5rem">
@@ -228,12 +228,12 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
           <div class="info-row"><span>Durata</span><span>7-8 ore</span></div>
           <div class="info-row"><span>Distanza</span><span>~11 km</span></div>
           <div class="info-row"><span>Dislivello</span><span>550 m salita</span></div>
-          <div class="info-row"><span>Difficoltà</span><span>EE &mdash; Escursionisti Esperti</span></div>
+          <div class="info-row"><span>Difficolt&agrave;</span><span>EE &mdash; Escursionisti Esperti</span></div>
           <div class="info-row"><span>Posti max</span><span>20 persone</span></div>
           <div class="info-row"><span>Guida</span><span>Andrea Saba AIGAE SA647</span></div>
           <a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20il%20Trekking%20a%20Cala%20Mudaloru%20del%2024%20Maggio.%20Puoi%20darmi%20informazioni?" class="btn-full" target="_blank" rel="noopener">Prenota ora su WhatsApp</a>
-          <a href="https://fb.me/e/7yCnp4u9h" class="btn-fb" target="_blank" rel="noopener">&#128337; Tutti i dettagli sull'evento Facebook</a>
-          <div class="fb-note"><strong>&#8505; Visita l'evento Facebook</strong> per orari aggiornati, punto di ritrovo definitivo, aggiornamenti meteo e tutte le informazioni utili prima di partecipare.</div>
+          <a href="https://fb.me/e/7yCnp4u9h" class="btn-fb" target="_blank" rel="noopener">&#128337; Tutti i dettagli sull&rsquo;evento Facebook</a>
+          <div class="fb-note"><strong>&#8505; Visita l&rsquo;evento Facebook</strong> per orari aggiornati, punto di ritrovo definitivo, aggiornamenti meteo e tutte le informazioni utili prima di partecipare.</div>
           <div class="warn">&#9888; Escursione per persone in ottima forma fisica con esperienza in percorsi tecnici. Non adatta a principianti.</div>
         </div>
       </div>
