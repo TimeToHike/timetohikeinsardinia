@@ -15,6 +15,109 @@
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Time to Hike in Sardinia">
 <title>Escursioni in Sardegna | Time to Hike in Sardinia</title>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Trekking a Cala Mudaloru — 24 Maggio 2026",
+    "startDate": "2026-05-24T08:00:00+02:00",
+    "endDate": "2026-05-24T17:00:00+02:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Golgo di Baunei",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Baunei",
+        "addressRegion": "OG",
+        "addressCountry": "IT"
+      }
+    },
+    "description": "Trekking EE nel cuore del Supramonte verso Cala Mudaloru. ~11 km, 550 m dislivello, 7-8 ore. Massimo 20 partecipanti.",
+    "offers": {
+      "@type": "Offer",
+      "price": "25",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://timetohikeinsardinia.com/escursioni/cala-mudaloru/"
+    },
+    "organizer": {
+      "@type": "Person",
+      "name": "Andrea Saba",
+      "url": "https://timetohikeinsardinia.com/chi-sono/"
+    },
+    "image": "https://timetohikeinsardinia.com/gallery/IMG-20260505-WA0012.webp"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Trekking a Cala Mariolu — 7 Giugno 2026",
+    "startDate": "2026-06-07T05:45:00+02:00",
+    "endDate": "2026-06-07T18:00:00+02:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Cala Mariolu, Costa di Orosei",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Baunei",
+        "addressRegion": "OG",
+        "addressCountry": "IT"
+      }
+    },
+    "description": "Trekking EE verso Cala Mariolu, una delle calette più iconiche della Sardegna. ~13 km, 660 m dislivello, 7-8 ore. Massimo 20 partecipanti.",
+    "offers": {
+      "@type": "Offer",
+      "price": "25",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://timetohikeinsardinia.com/escursioni/cala-mariolu/"
+    },
+    "organizer": {
+      "@type": "Person",
+      "name": "Andrea Saba",
+      "url": "https://timetohikeinsardinia.com/chi-sono/"
+    },
+    "image": "https://timetohikeinsardinia.com/gallery/cala-mariolu-trekking.webp"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Experience dal Pastore 2.0 + Trekking a Cala Fenile — 27-28 Giugno 2026",
+    "startDate": "2026-06-27T18:00:00+02:00",
+    "endDate": "2026-06-28T16:00:00+02:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Baunei, Ogliastra",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Baunei",
+        "addressRegion": "OG",
+        "addressCountry": "IT"
+      }
+    },
+    "description": "Weekend immersivo: cena dal pastore, pernotto in pinnetti tradizionali, mungitura capre e trekking verso Cala Fenile. ~6.5 km, 300 m dislivello. Posti limitati.",
+    "offers": {
+      "@type": "Offer",
+      "price": "85",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://timetohikeinsardinia.com/escursioni/experience-pastore-giugno27/"
+    },
+    "organizer": {
+      "@type": "Person",
+      "name": "Andrea Saba",
+      "url": "https://timetohikeinsardinia.com/chi-sono/"
+    },
+    "image": "https://timetohikeinsardinia.com/gallery/experience-pastore-collage.webp"
+  }
+]
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -79,6 +182,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .bsmd:hover{background:var(--stone)}
 
 .storico{background:var(--cream)}
+
+/* ── I NOSTRI PERCORSI ── */
+.percorsi{background:var(--sand)}
+.percorsi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.8rem;margin-top:2rem}
+.pcard{background:var(--white);border-radius:3px;overflow:hidden;box-shadow:0 4px 36px rgba(58,46,38,.09);transition:transform .25s,box-shadow .25s;text-decoration:none;display:block}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 12px 48px rgba(58,46,38,.15)}
+.pcard-img{height:220px;overflow:hidden;position:relative}
+.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pcard:hover .pcard-img img{transform:scale(1.05)}
+.pcard-tag{position:absolute;top:1rem;left:1rem;background:var(--gold);color:var(--white);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:.24rem .7rem;border-radius:2px}
+.pcard-body{padding:1.6rem}
+.pcard-title{font-family:var(--fd);font-size:1.5rem;font-weight:400;color:var(--near-black);line-height:1.2;margin-bottom:.4rem}
+.pcard-loc{font-size:.78rem;color:var(--brown);margin-bottom:.85rem}
+.pcard-desc{font-size:.88rem;color:var(--dark-brown);line-height:1.78;margin-bottom:1.2rem}
+.pcard-pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.pcard-pill{background:var(--sand);border:1px solid var(--stone);border-radius:20px;padding:.22rem .72rem;font-size:.7rem;color:var(--brown)}
+.pcard-cta{display:inline-block;background:var(--gold);color:var(--white);padding:.55rem 1.3rem;border-radius:2px;font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.pcard-cta:hover{background:var(--gold-dk)}
+@media(max-width:860px){.percorsi-grid{grid-template-columns:1fr}}
 .st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem}
 .st-card{background:var(--white);border:1px solid var(--stone);border-radius:3px;padding:1.5rem;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
 .st-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
@@ -124,7 +246,7 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
   .mp{font-size:.75rem;padding:.22rem .65rem}
   .price-row{flex-direction:column;align-items:flex-start;gap:.75rem}
   .eacts{width:100%}
-  .bsm{text-align:center;flex:1;padding:.65rem .8rem;font-size:.72rem}
+  .bsm{text-align:center;padding:.65rem 1rem;font-size:.72rem}
   footer{flex-direction:column;text-align:center;padding:1.8rem 1.2rem;gap:1rem}
   .f-links{justify-content:center;flex-wrap:wrap;gap:1rem}
 }
@@ -139,6 +261,7 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
     <li><a href="/">Home</a></li>
     <li><a href="/chi-sono/">Chi sono</a></li>
     <li><a href="/escursioni/">Escursioni</a></li>
+    <li><a href="/percorsi/">Percorsi</a></li>
     <li><a href="/#gallery">Gallery</a></li>
     <li><a href="/#video">Video</a></li>
     <li><a href="/#recensioni">Recensioni</a></li>
@@ -149,6 +272,7 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
   <a href="/">Home</a>
   <a href="/chi-sono/">Chi sono</a>
   <a href="/escursioni/">Escursioni</a>
+  <a href="/percorsi/">Percorsi</a>
   <a href="/#gallery">Gallery</a>
   <a href="/#video">Video</a>
   <a href="/#recensioni">Recensioni</a>
@@ -158,7 +282,7 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
 <div class="page-hero">
   <span class="lbl">Sardegna autentica</span>
   <h1>Escursioni <em>in programma</em></h1>
-  <p>Percorsi selezionati nell'Ogliastra e nel Supramonte. Gruppi piccoli, guida certificata AIGAE.</p>
+  <p>Trekking e escursioni in tutta la Sardegna — dall'Ogliastra al Supramonte, dalla Costa di Orosei alla Costa Verde. Gruppi piccoli, guida ambientale certificata AIGAE.</p>
 </div>
 
 <section style="background:var(--sand2)">
@@ -170,7 +294,39 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
     <!-- Cala Mudaloru -->
     <div class="ecard">
       <div class="ecard-side">
-        <div class="ecard-side-bg" style="background-image:url('/gallery/cala-mariolu-trekking.jpg')"></div>
+        <div class="ecard-side-bg" style="background-image:url('/gallery/IMG-20260505-WA0012.webp')"></div>
+        <div class="emonth">Maggio 2026</div>
+        <div class="edate-big">24</div>
+      </div>
+      <div class="ebody">
+        <div>
+          <span class="etag">Giornaliera &middot; Baunei, Ogliastra</span>
+          <h3 class="etitle">Trekking a Cala Mudaloru — 24 Maggio 2026</h3>
+          <p class="eloc">&#128205; Golgo di Baunei, Ogliastra</p>
+          <p class="edesc">Dal parcheggio di Piredda si entra nel cuore più selvaggio del Supramonte, lungo un bacu che scende verso il mare tra rocce calcaree e macchia mediterranea. Il sentiero cambia volto man mano: ci si addentra nel canyon, le pareti si stringono, la discesa si fa tecnica tra pietraie, roccia affiorante e scale fustes. Poi, all'improvviso, appare Cala Mudaloru: selvaggia, silenziosa, senza filtri.</p>
+          <div class="mpills">
+            <span class="mp">~11 km</span><span class="mp">550 m dislivello salita</span><span class="mp">7-8 ore</span>
+            <span class="mp">Grado CAI: EE</span><span class="mp">Difficoltà &#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mp">Max 20 posti</span>
+          </div>
+          <div class="mpills">
+            <span class="mp">Ritrovo ore 08:00 &mdash; Bar Baunei</span>
+          </div>
+        </div>
+        <div class="price-row">
+          <div><div class="psub">Quota a persona</div><div class="ptag">&euro;25</div></div>
+          <div class="eacts">
+            <a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20il%20Trekking%20a%20Cala%20Mudaloru%20del%2024%20Maggio.%20Puoi%20darmi%20informazioni?" class="bsm bsmp" target="_blank" rel="noopener">Prenota ora</a>
+            <a href="/escursioni/cala-mudaloru/" class="bsm bsmd">Dettagli</a>
+            <a href="https://fb.me/e/7yCnp4u9h" target="_blank" rel="noopener" class="bsm bsmg">Info su Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cala Mariolu -->
+    <div class="ecard">
+      <div class="ecard-side">
+        <div class="ecard-side-bg" style="background-image:url('/gallery/cala-mariolu-trekking.webp')"></div>
         <div class="emonth">Giugno 2026</div>
         <div class="edate-big">07</div>
       </div>
@@ -202,7 +358,7 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
     <!-- Experience Pastore 20-21 Giugno SOLD OUT -->
     <div class="ecard">
       <div class="ecard-side">
-        <div class="ecard-side-bg" style="background-image:url('/gallery/experience-pastore-collage.jpg')"></div>
+        <div class="ecard-side-bg" style="background-image:url('/gallery/experience-pastore-collage.webp')"></div>
         <div class="emonth">Giugno 2026</div>
         <div class="edate-big">20&ndash;21</div>
       </div>
@@ -232,7 +388,7 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
     <!-- Experience Pastore 27-28 Giugno -->
     <div class="ecard">
       <div class="ecard-side">
-        <div class="ecard-side-bg" style="background-image:url('/gallery/experience-pastore-collage.jpg')"></div>
+        <div class="ecard-side-bg" style="background-image:url('/gallery/experience-pastore-collage.webp')"></div>
         <div class="emonth">Giugno 2026</div>
         <div class="edate-big">27&ndash;28</div>
       </div>
@@ -258,39 +414,60 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
       </div>
     </div>
 
-    
-    <div class="ecard">
-      <div class="ecard-side">
-        <div class="ecard-side-bg" style="background-image:url('/gallery/IMG-20260505-WA0012.jpg')"></div>
-        <div class="emonth">Ottobre 2026</div>
-        <div class="edate-big">4</div>
-      </div>
-      <div class="ebody">
-        <div>
-          <span class="etag">Giornaliera &middot; Baunei, Ogliastra</span>
-          <h3 class="etitle">Trekking a Cala Mudaloru — 4 Ottobre 2026</h3>
-          <p class="eloc">&#128205; Golgo di Baunei, Ogliastra</p>
-          <p class="edesc">Dal parcheggio di Piredda si entra nel cuore più selvaggio del Supramonte, lungo un bacu che scende verso il mare tra rocce calcaree e macchia mediterranea. Il sentiero cambia volto man mano: ci si addentra nel canyon, le pareti si stringono, la discesa si fa tecnica tra pietraie, roccia affiorante e scale fustes. Poi, all'improvviso, appare Cala Mudaloru: selvaggia, silenziosa, senza filtri.</p>
-          <div class="mpills">
-            <span class="mp">~11 km</span><span class="mp">550 m dislivello salita</span><span class="mp">7-8 ore</span>
-            <span class="mp">Grado CAI: EE</span><span class="mp">Difficoltà &#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="mp">Max 20 posti</span>
-          </div>
-          <div class="mpills">
-            <span class="mp">Ritrovo ore 08:00 &mdash; Bar Baunei</span>
-          </div>
-        </div>
-        <div class="price-row">
-          <div><div class="psub">Quota a persona</div><div class="ptag">&euro;25</div></div>
-          <div class="eacts">
-            <a href="https://wa.me/393460906014?text=Ciao%20Andrea!%20Vorrei%20prenotare%20il%20Trekking%20a%20Cala%20Mudaloru%20del%204%20Ottobre.%20Puoi%20darmi%20informazioni?" class="bsm bsmp" target="_blank" rel="noopener">Prenota ora</a>
-            <a href="/escursioni/cala-mudaloru/" class="bsm bsmd">Dettagli</a>
-            <a href="https://fb.me/e/7yCnp4u9h" target="_blank" rel="noopener" class="bsm bsmg">Info su Facebook</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <p style="text-align:center;color:var(--warm-mid);font-size:.86rem;font-style:italic;margin-top:1.3rem">Nuove escursioni sempre in calendario &mdash; seguimi su <a href="https://www.facebook.com/TimeToHikeInSardinia/past_hosted_events" target="_blank" style="color:var(--gold-dk)">Facebook</a> e <a href="https://www.instagram.com/timetohikeinsardinia/" target="_blank" style="color:var(--gold-dk)">Instagram</a> per non perdere le prossime uscite.</p>
+  </div>
+</section>
+
+
+<section class="percorsi">
+  <div class="si">
+    <span class="lbl">Esplora la Sardegna</span>
+    <h2 class="h2">I nostri <em>percorsi</em></h2>
+    <div class="div"></div>
+    <p style="color:var(--brown);font-size:.95rem;max-width:600px;line-height:1.8;margin-bottom:0">Percorsi selezionati nel Supramonte e nella Costa di Orosei. Schede permanenti con tutto quello che devi sapere prima di partire.</p>
+    <div class="percorsi-grid">
+
+      <!-- Cala Mariolu -->
+      <a href="/escursioni/cala-mariolu/" class="pcard">
+        <div class="pcard-img">
+          <img src="/gallery/cala-mariolu-trekking.webp" alt="Trekking Cala Mariolu Costa di Orosei Baunei Ogliastra" loading="lazy">
+          <span class="pcard-tag">Grado CAI: EE</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-title">Trekking a Cala Mariolu</div>
+          <div class="pcard-loc">&#128205; Costa di Orosei, Baunei</div>
+          <p class="pcard-desc">Falesie a 500 metri a picco sul mare, l&rsquo;arco naturale di S&rsquo;Arcada Manna, scale fustes in ginepro. La cala pi&ugrave; famosa dell&rsquo;Ogliastra, raggiungibile solo a piedi.</p>
+          <div class="pcard-pills">
+            <span class="pcard-pill">~13 km</span>
+            <span class="pcard-pill">660 m dislivello</span>
+            <span class="pcard-pill">7-8 ore</span>
+            <span class="pcard-pill">EE</span>
+          </div>
+          <span class="pcard-cta">Scopri il percorso &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Cala Mudaloru -->
+      <a href="/escursioni/cala-mudaloru/" class="pcard">
+        <div class="pcard-img">
+          <img src="/gallery/IMG-20260505-WA0012.webp" alt="Trekking Cala Mudaloru Supramonte Baunei Ogliastra" loading="lazy">
+          <span class="pcard-tag">Grado CAI: EE</span>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-title">Trekking a Cala Mudaloru</div>
+          <div class="pcard-loc">&#128205; Golgo di Baunei, Ogliastra</div>
+          <p class="pcard-desc">Canyon calcareo, macchia mediterranea, una cala selvaggia senza bar n&eacute; ombrelloni. Il Supramonte pi&ugrave; vero, con una discesa tecnica che si guadagna ogni metro.</p>
+          <div class="pcard-pills">
+            <span class="pcard-pill">~11 km</span>
+            <span class="pcard-pill">550 m dislivello</span>
+            <span class="pcard-pill">7-8 ore</span>
+            <span class="pcard-pill">EE</span>
+          </div>
+          <span class="pcard-cta">Scopri il percorso &rarr;</span>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 
@@ -320,8 +497,8 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
   <div class="f-brand">
     <a href="/" aria-label="Time to Hike in Sardinia">
       <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg" style="width:180px;height:auto">
-        <text x="0" y="55" font-family="Cormorant Garamond, Georgia, serif" font-size="38" font-weight="300" fill="var(--logo-color, #ffffff)">Time to Hike</text>
-        <text x="2" y="75" font-family="Jost, system-ui, sans-serif" font-size="13" font-weight="300" letter-spacing="4" fill="var(--logo-color, #ffffff)">IN SARDINIA</text>
+        <text x="0" y="55" font-family="Cormorant Garamond, Georgia, serif" font-size="38" font-weight="300" fill="#ffffff">Time to Hike</text>
+        <text x="2" y="75" font-family="Jost, system-ui, sans-serif" font-size="13" font-weight="300" letter-spacing="4" fill="#ffffff">IN SARDINIA</text>
       </svg>
     </a>
   </div>
@@ -357,5 +534,3 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
-
-    <!-- Cala Mariolu -->
