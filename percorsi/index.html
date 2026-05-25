@@ -239,11 +239,14 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Adatta zoom per mostrare tutti i marker
-  var bounds = L.latLngBounds([
-    [41.25, 8.13],
-    [38.86, 9.83]
-  ]);
-  map.fitBounds(bounds, { padding: [20, 20] });
+  setTimeout(function() {
+    var bounds = L.latLngBounds([
+      [41.35, 7.90],
+      [38.70, 10.00]
+    ]);
+    map.invalidateSize();
+    map.fitBounds(bounds, { padding: [30, 30] });
+  }, 200);
 
 });
 </script>
@@ -298,6 +301,32 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="pacts">
             <a href="/percorsi/cala-mudaloru/" class="btn-percorso">Scopri il percorso</a>
+            <span class="diff-badge">Difficolt&agrave; &#9733;&#9733;&#9733;&#9733;&#9734; &middot; Escursionisti esperti</span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- FORESTA MUSUI E TUVIOIS -->
+      <div class="pcard">
+        <div class="pcard-img">
+          <img src="/gallery/foresta-tuviois-panorama-mare.webp" alt="Trekking Foresta Musui Tuviois Monte Serpeddi Burcei Sardegna" loading="lazy">
+        </div>
+        <div class="pcard-body">
+          <div>
+            <span class="ptag">Monte Serpedd&igrave; &middot; Burcei</span>
+            <h2 class="ptitle">Foresta di Musui e Tuviois</h2>
+            <p class="ploc">&#128205; Monte Serpedd&igrave; &ndash; Burcei (CA)</p>
+            <p class="pdesc">Una delle foreste primarie pi&ugrave; rare della Sardegna, a meno di un&rsquo;ora da Cagliari. Lecci centenari mai abbattuti, il Riu Leunaxi tra rocce granitiche, panorami sul Golfo degli Angeli e la possibilit&agrave; di incontrare il cervo sardo nel suo habitat naturale.</p>
+            <div class="ppills">
+              <span class="pp">~17 km</span>
+              <span class="pp">910 m dislivello</span>
+              <span class="pp">8 ore</span>
+              <span class="pp">Grado CAI: EE</span>
+            </div>
+          </div>
+          <div class="pacts">
+            <a href="/percorsi/foresta-musui-tuviois/" class="btn-percorso">Scopri il percorso</a>
             <span class="diff-badge">Difficolt&agrave; &#9733;&#9733;&#9733;&#9733;&#9734; &middot; Escursionisti esperti</span>
           </div>
         </div>
