@@ -149,7 +149,7 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
     <p style="font-size:.9rem;color:var(--warm-mid);margin-bottom:1.5rem;">Clicca sui marker per i dettagli &mdash; scorri per vedere tutti i percorsi</p>
   </div>
   <div style="max-width:1120px;margin:0 auto;padding:0 4rem 4rem;">
-    <div id="tth-map" style="width:100%;height:500px;border-radius:6px;overflow:hidden;border:1px solid var(--stone);box-shadow:0 4px 36px rgba(58,46,38,.09);"></div>
+    <div id="tth-map" style="width:100%;height:380px;border-radius:6px;overflow:hidden;border:1px solid var(--stone);box-shadow:0 4px 36px rgba(58,46,38,.09);z-index:1;"></div>
     <div style="display:flex;gap:24px;margin-top:1rem;flex-wrap:wrap;">
       <div style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--warm-mid);">
         <div style="width:10px;height:10px;border-radius:50%;background:#c4975a;flex-shrink:0;"></div>Percorso costiero / marittimo
@@ -166,8 +166,8 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var map = L.map('tth-map', {
-    center: [39.9, 9.1],
-    zoom: 8,
+    center: [39.75, 9.3],
+    zoom: 7,
     zoomControl: true,
     scrollWheelZoom: false
   });
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var percorsi = [
     {
-      lat: 40.113, lng: 9.617,
+      lat: 40.123914, lng: 9.676211,
       title: 'Cala Mariolu',
       tag: 'Costa di Orosei &middot; Baunei',
       loc: '&#128205; Costa di Orosei, Baunei, Ogliastra',
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
       url: '/percorsi/cala-mariolu/'
     },
     {
-      lat: 40.063, lng: 9.598,
+      lat: 40.132404, lng: 9.666240,
       title: 'Cala Mudaloru',
       tag: 'Supramonte &middot; Baunei',
       loc: '&#128205; Golgo di Baunei, Ogliastra',
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
       url: '/percorsi/cala-mudaloru/'
     },
     {
-      lat: 39.46, lng: 9.35,
+      lat: 39.390270, lng: 9.310835,
       title: 'Foresta Musui e Tuviois',
       tag: 'Monte Serpedd&igrave; &middot; Burcei',
       loc: '&#128205; Monte Serpedd&igrave; &ndash; Burcei (CA)',
