@@ -106,36 +106,6 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
   .si{padding:3rem 1.2rem}
 }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Percorsi Trekking Sardegna — Time to Hike in Sardinia",
-  "description": "I percorsi di trekking in Sardegna guidati da Andrea Saba, guida AIGAE certificata. Cala Mariolu, Cala Mudaloru, Foresta di Musui e Tuviois.",
-  "url": "https://timetohikeinsardinia.com/percorsi/",
-  "numberOfItems": 3,
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "url": "https://timetohikeinsardinia.com/percorsi/cala-mariolu/",
-      "name": "Trekking Cala Mariolu — Costa di Orosei, Baunei"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "url": "https://timetohikeinsardinia.com/percorsi/cala-mudaloru/",
-      "name": "Trekking Cala Mudaloru — Supramonte di Baunei"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "url": "https://timetohikeinsardinia.com/percorsi/foresta-musui-tuviois/",
-      "name": "Trekking Foresta Musui e Tuviois — Burcei, Sette Fratelli"
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -169,6 +139,107 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
   <h1>I nostri <em>percorsi</em></h1>
   <p>Schede descrittive dei percorsi che facciamo. Luoghi, atmosfere, quello che trovi lungo la strada. Per capire dove stai andando prima di andarci.</p>
 </div>
+
+
+<section style="background:var(--sand)">
+  <div class="si" style="padding-top:3rem;padding-bottom:0">
+    <span class="lbl">Dove siamo</span>
+    <h2 class="h2">I percorsi sulla <em>mappa</em></h2>
+    <div class="div"></div>
+    <p style="font-size:.9rem;color:var(--warm-mid);margin-bottom:1.5rem;">Clicca sui marker per i dettagli &mdash; scorri per vedere tutti i percorsi</p>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:0 4rem 4rem;">
+    <div id="tth-map" style="width:100%;height:500px;border-radius:6px;overflow:hidden;border:1px solid var(--stone);box-shadow:0 4px 36px rgba(58,46,38,.09);"></div>
+    <div style="display:flex;gap:24px;margin-top:1rem;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--warm-mid);">
+        <div style="width:10px;height:10px;border-radius:50%;background:#c4975a;flex-shrink:0;"></div>Percorso costiero / marittimo
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--warm-mid);">
+        <div style="width:10px;height:10px;border-radius:50%;background:#7a8c72;flex-shrink:0;"></div>Percorso forestale / montagna
+      </div>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var map = L.map('tth-map', {
+    center: [39.9, 9.1],
+    zoom: 8,
+    zoomControl: true,
+    scrollWheelZoom: false
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18
+  }).addTo(map);
+
+  var percorsi = [
+    {
+      lat: 40.113, lng: 9.617,
+      title: 'Cala Mariolu',
+      tag: 'Costa di Orosei &middot; Baunei',
+      loc: '&#128205; Costa di Orosei, Baunei, Ogliastra',
+      pills: ['~13 km', '660 m dislivello', '7-8 ore', 'CAI EE'],
+      color: '#c4975a',
+      url: '/percorsi/cala-mariolu/'
+    },
+    {
+      lat: 40.063, lng: 9.598,
+      title: 'Cala Mudaloru',
+      tag: 'Supramonte &middot; Baunei',
+      loc: '&#128205; Golgo di Baunei, Ogliastra',
+      pills: ['~11 km', '550 m dislivello', '7-8 ore', 'CAI EE'],
+      color: '#c4975a',
+      url: '/percorsi/cala-mudaloru/'
+    },
+    {
+      lat: 39.46, lng: 9.35,
+      title: 'Foresta Musui e Tuviois',
+      tag: 'Monte Serpedd&igrave; &middot; Burcei',
+      loc: '&#128205; Monte Serpedd&igrave; &ndash; Burcei (CA)',
+      pills: ['~17 km', '910 m dislivello', '8 ore', 'CAI EE'],
+      color: '#7a8c72',
+      url: '/percorsi/foresta-musui-tuviois/'
+    }
+  ];
+
+  percorsi.forEach(function(p) {
+    var icon = L.divIcon({
+      className: '',
+      html: '<svg width="28" height="36" viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));cursor:pointer;">' +
+            '<path d="M14 0 C6.3 0 0 6.3 0 14 C0 24.5 14 36 14 36 C14 36 28 24.5 28 14 C28 6.3 21.7 0 14 0Z" fill="' + p.color + '"/>' +
+            '<rect x="11" y="6" width="2" height="16" fill="#fff" rx="1"/>' +
+            '<polygon points="13,6 13,14 22,10" fill="#fff"/>' +
+            '</svg>',
+      iconSize: [28, 36],
+      iconAnchor: [14, 36],
+      popupAnchor: [0, -38]
+    });
+
+    var pillsHtml = p.pills.map(function(pl) {
+      return '<span style="display:inline-block;background:#f0e9de;border:1px solid #c8bbaa;border-radius:20px;padding:2px 8px;font-size:11px;color:#6b5c4e;margin:2px 2px 0 0;">' + pl + '</span>';
+    }).join('');
+
+    var popupContent = "<div style='font-family:Jost,system-ui,sans-serif;min-width:220px;'>" +
+      "<p style='font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#a89888;margin:0 0 4px;'>" + p.tag + "</p>" +
+      "<p style='font-family:Cormorant Garamond,Georgia,serif;font-size:19px;font-weight:400;font-style:italic;color:#1c1612;margin:0 0 4px;line-height:1.2;'>" + p.title + "</p>" +
+      "<p style='font-size:12px;color:#6b5c4e;margin:0 0 10px;'>" + p.loc + "</p>" +
+      "<div style='margin-bottom:12px;'>" + pillsHtml + "</div>" +
+      "<a href='" + p.url + "' style='display:block;background:#c4975a;color:#fff;text-align:center;padding:9px;border-radius:3px;text-decoration:none;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;'>Scopri il percorso &#8594;</a>" +
+      "</div>";
+
+    var marker = L.marker([p.lat, p.lng], { icon: icon }).addTo(map);
+    marker.bindPopup(popupContent, { maxWidth: 280 });
+    marker.on('mouseover', function() { this.openPopup(); });
+    marker.on('mouseout', function() { this.closePopup(); });
+  });
+});
+</script>
+
 
 <section style="background:var(--sand2)">
   <div class="si">
@@ -219,32 +290,6 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
           </div>
           <div class="pacts">
             <a href="/percorsi/cala-mudaloru/" class="btn-percorso">Scopri il percorso</a>
-            <span class="diff-badge">Difficolt&agrave; &#9733;&#9733;&#9733;&#9733;&#9734; &middot; Escursionisti esperti</span>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- FORESTA MUSUI E TUVIOIS -->
-      <div class="pcard">
-        <div class="pcard-img">
-          <img src="/gallery/foresta-tuviois-panorama-mare.webp" alt="Trekking Foresta Musui Tuviois Monte Serpeddi Burcei Sardegna" loading="lazy">
-        </div>
-        <div class="pcard-body">
-          <div>
-            <span class="ptag">Monte Serpedd&igrave; &middot; Burcei</span>
-            <h2 class="ptitle">Foresta di Musui e Tuviois</h2>
-            <p class="ploc">&#128205; Monte Serpedd&igrave; &ndash; Burcei (CA)</p>
-            <p class="pdesc">Una delle foreste primarie pi&ugrave; rare della Sardegna, a meno di un&rsquo;ora da Cagliari. Lecci centenari mai abbattuti, il Riu Leunaxi tra rocce granitiche, panorami sul Golfo degli Angeli e la possibilit&agrave; di incontrare il cervo sardo nel suo habitat naturale.</p>
-            <div class="ppills">
-              <span class="pp">~17 km</span>
-              <span class="pp">910 m dislivello</span>
-              <span class="pp">8 ore</span>
-              <span class="pp">Grado CAI: EE</span>
-            </div>
-          </div>
-          <div class="pacts">
-            <a href="/percorsi/foresta-musui-tuviois/" class="btn-percorso">Scopri il percorso</a>
             <span class="diff-badge">Difficolt&agrave; &#9733;&#9733;&#9733;&#9733;&#9734; &middot; Escursionisti esperti</span>
           </div>
         </div>
