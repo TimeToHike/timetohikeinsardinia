@@ -340,10 +340,10 @@ document.addEventListener('DOMContentLoaded', function() {
   percorsi.forEach(function(p) {
     var icon = L.divIcon({
       className: '',
-      html: '<div style="width:14px;height:14px;background:' + p.color + ';border:2px solid #fff;border-radius:50%;box-shadow:0 1px 5px rgba(0,0,0,.35);cursor:pointer;"></div>',
-      iconSize: [14, 14],
-      iconAnchor: [7, 7],
-      popupAnchor: [0, -10]
+      html: '<div style="width:18px;height:18px;background:' + p.color + ';border:3px solid #fff;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.35);cursor:pointer;"></div>',
+      iconSize: [18, 18],
+      iconAnchor: [9, 9],
+      popupAnchor: [0, -12]
     });
 
     var pillsHtml = p.pills.map(function(pl) {
