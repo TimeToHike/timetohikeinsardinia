@@ -237,6 +237,15 @@ document.addEventListener('DOMContentLoaded', function() {
     marker.on('mouseover', function() { this.openPopup(); });
     marker.on('mouseout', function() { this.closePopup(); });
   });
+
+  // Adatta zoom per mostrare tutti i marker
+  var bounds = L.latLngBounds([
+    [40.123914, 9.676211],
+    [40.132404, 9.666240],
+    [39.390270, 9.310835]
+  ]);
+  map.fitBounds(bounds, { padding: [40, 40] });
+
 });
 </script>
 
