@@ -361,7 +361,25 @@ document.addEventListener('DOMContentLoaded', function() {
     var marker = L.marker([p.lat, p.lng], { icon: icon });
     marker.bindPopup(popupContent, { maxWidth: 280 });
     marker.on('mouseover', function() { this.openPopup(); });
-    marker.on('mouseout', function() { this.closePopup(); });
+    marker.on('mouseout', function(e) {
+      var that = this;
+      setTimeout(function() {
+        var popup = that.getPopup();
+        if (popup && popup._container && popup._container.matches(':hover')) return;
+        that.closePopup();
+      }, 100);
+    });
+    marker.on('popupopen', function() {
+      var popup = this.getPopup();
+      if (!popup._container) return;
+      popup._container.addEventListener('mouseleave', function() {
+        that_marker.closePopup();
+      });
+      var that_marker = this;
+      popup._container.addEventListener('mouseenter', function() {
+        clearTimeout(that_marker._closeTimer);
+      });
+    });
     cluster.addLayer(marker);
   });
 
