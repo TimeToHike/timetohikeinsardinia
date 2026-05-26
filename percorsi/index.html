@@ -337,6 +337,8 @@ document.addEventListener('DOMContentLoaded', function() {
     showCoverageOnHover: false
   });
 
+  var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
   percorsi.forEach(function(p) {
     var icon = L.divIcon({
       className: '',
@@ -359,27 +361,46 @@ document.addEventListener('DOMContentLoaded', function() {
       "</div>";
 
     var marker = L.marker([p.lat, p.lng], { icon: icon });
-    marker.bindPopup(popupContent, { maxWidth: 280 });
-    marker.on('mouseover', function() { this.openPopup(); });
-    marker.on('mouseout', function(e) {
-      var that = this;
-      setTimeout(function() {
-        var popup = that.getPopup();
-        if (popup && popup._container && popup._container.matches(':hover')) return;
-        that.closePopup();
-      }, 100);
-    });
-    marker.on('popupopen', function() {
-      var popup = this.getPopup();
-      if (!popup._container) return;
-      popup._container.addEventListener('mouseleave', function() {
-        that_marker.closePopup();
+    marker.bindPopup(popupContent, { maxWidth: 280, autoPan: false });
+
+    if (!isTouchDevice) {
+      var closeTimer = null;
+
+      function scheduleClose() {
+        closeTimer = setTimeout(function() {
+          marker.closePopup();
+        }, 300);
+      }
+
+      function cancelClose() {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+      }
+
+      marker.on('mouseover', function() {
+        cancelClose();
+        this.openPopup();
       });
-      var that_marker = this;
-      popup._container.addEventListener('mouseenter', function() {
-        clearTimeout(that_marker._closeTimer);
+
+      marker.on('mouseout', function() {
+        scheduleClose();
       });
-    });
+
+      marker.on('popupopen', function() {
+        var popup = this.getPopup();
+        if (!popup || !popup._container) return;
+        popup._container.addEventListener('mouseenter', cancelClose);
+        popup._container.addEventListener('mouseleave', scheduleClose);
+      });
+
+      marker.on('popupclose', function() {
+        cancelClose();
+      });
+    }
+    // Su touch: Leaflet gestisce nativamente tap → apre popup, tap fuori → chiude
+
     cluster.addLayer(marker);
   });
 
