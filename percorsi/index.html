@@ -352,16 +352,45 @@ document.addEventListener('DOMContentLoaded', function() {
       return '<span style="display:inline-block;background:#f0e9de;border:1px solid #c8bbaa;border-radius:20px;padding:2px 8px;font-size:11px;color:#6b5c4e;margin:2px 2px 0 0;">' + pl + '</span>';
     }).join('');
 
-    var popupContent = "<div style='font-family:Jost,system-ui,sans-serif;min-width:220px;'>" +
-      "<p style='font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#a89888;margin:0 0 4px;'>" + p.tag + "</p>" +
-      "<p style='font-family:Cormorant Garamond,Georgia,serif;font-size:19px;font-weight:400;font-style:italic;color:#1c1612;margin:0 0 4px;line-height:1.2;'>" + p.title + "</p>" +
-      "<p style='font-size:12px;color:#6b5c4e;margin:0 0 10px;'>" + p.loc + "</p>" +
-      "<div style='margin-bottom:12px;'>" + pillsHtml + "</div>" +
-      "<a href='" + p.url + "' style='display:block;background:#c4975a;color:#fff;text-align:center;padding:9px;border-radius:3px;text-decoration:none;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;'>Scopri il percorso &#8594;</a>" +
-      "</div>";
+    // buildPopupContent: ricalcola tutto al momento dell'apertura
+    // così funziona correttamente anche dopo rotazione schermo
+    function buildPopupContent() {
+      var sw      = window.innerWidth;
+      var minW    = sw < 480 ? '140px' : sw < 768 ? '170px' : sw < 1024 ? '200px' : '220px';
+      var fsTag   = sw < 480 ? '8px'   : sw < 768 ? '9px'   : '10px';
+      var fsTitle = sw < 480 ? '14px'  : sw < 768 ? '15px'  : sw < 1024 ? '17px' : '19px';
+      var fsLoc   = sw < 480 ? '10px'  : sw < 768 ? '11px'  : '12px';
+      var mbPill  = sw < 480 ? '6px'   : sw < 768 ? '8px'   : '12px';
+      var padBtn  = sw < 480 ? '6px'   : sw < 768 ? '7px'   : '9px';
+      return "<div style='font-family:Jost,system-ui,sans-serif;min-width:" + minW + ";'>" +
+        "<p style='font-size:" + fsTag + ";letter-spacing:.12em;text-transform:uppercase;color:#a89888;margin:0 0 3px;'>" + p.tag + "</p>" +
+        "<p style='font-family:Cormorant Garamond,Georgia,serif;font-size:" + fsTitle + ";font-weight:400;font-style:italic;color:#1c1612;margin:0 0 3px;line-height:1.2;'>" + p.title + "</p>" +
+        "<p style='font-size:" + fsLoc + ";color:#6b5c4e;margin:0 0 8px;'>" + p.loc + "</p>" +
+        "<div style='margin-bottom:" + mbPill + ";'>" + pillsHtml + "</div>" +
+        "<a href='" + p.url + "' style='display:block;background:#c4975a;color:#fff;text-align:center;padding:" + padBtn + ";border-radius:3px;text-decoration:none;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;'>Scopri il percorso &#8594;</a>" +
+        "</div>";
+    }
+
+    function getPopupWidth() {
+      var sw = window.innerWidth;
+      return sw < 480 ? Math.min(200, sw - 70) : sw < 768 ? Math.min(240, sw - 80) : sw < 1024 ? 260 : 280;
+    }
 
     var marker = L.marker([p.lat, p.lng], { icon: icon });
-    marker.bindPopup(popupContent, { maxWidth: 280, autoPan: false });
+    marker.bindPopup(buildPopupContent(), { maxWidth: getPopupWidth(), autoPan: isTouchDevice });
+
+    // Ricalcola contenuto e dimensioni popup ad ogni apertura
+    marker.on('popupopen', function() {
+      var popup = this.getPopup();
+      if (!popup) return;
+      popup.setContent(buildPopupContent());
+      popup.options.maxWidth = getPopupWidth();
+      popup.update();
+      if (!isTouchDevice && popup._container) {
+        popup._container.addEventListener('mouseenter', cancelClose);
+        popup._container.addEventListener('mouseleave', scheduleClose);
+      }
+    });
 
     if (!isTouchDevice) {
       var closeTimer = null;
@@ -386,13 +415,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       marker.on('mouseout', function() {
         scheduleClose();
-      });
-
-      marker.on('popupopen', function() {
-        var popup = this.getPopup();
-        if (!popup || !popup._container) return;
-        popup._container.addEventListener('mouseenter', cancelClose);
-        popup._container.addEventListener('mouseleave', scheduleClose);
       });
 
       marker.on('popupclose', function() {
