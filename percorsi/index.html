@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     var marker = L.marker([p.lat, p.lng], { icon: icon });
-    marker.bindPopup(buildPopupContent(), { maxWidth: getPopupWidth(), autoPan: isTouchDevice });
+    marker.bindPopup(buildPopupContent(), { maxWidth: getPopupWidth(), autoPan: true });
 
     // Ricalcola contenuto e dimensioni popup ad ogni apertura
     marker.on('popupopen', function() {
