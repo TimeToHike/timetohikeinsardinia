@@ -105,6 +105,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .photo-single img{width:100%;height:420px;object-fit:cover;border-radius:3px;display:block}
 .photo-single.tall img{height:520px;object-fit:cover;object-position:center top}
 .photo-caption{font-size:.72rem;color:var(--warm-mid);letter-spacing:.08em;margin-top:.4rem;text-align:center}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;align-items:start}
 
 footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.3rem;border-top:1px solid rgba(196,151,90,0.2)}
 .f-brand{--logo-color:#ffffff}
@@ -137,6 +138,7 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
   .hamburger{display:flex}
   .nav-logo img{height:36px;max-width:160px}
   .si{padding:3rem 1.2rem}
+  .cta-grid{grid-template-columns:1fr}
   .photo-gallery{grid-template-columns:1fr}
   .photo-gallery img{height:240px}
   .photo-single img{height:300px}
@@ -242,7 +244,7 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem;display:flex;justify-content:spa
       <p class="photo-caption">Il tratto EE verso la cascata &mdash; pietraia granitica che richiede piede fermo</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;align-items:start">
+    <div class="cta-grid">
       <div style="background:var(--sand2);border-radius:3px;padding:1.2rem 1.5rem;font-size:.85rem;color:var(--brown);line-height:1.9">
         <strong style="display:block;color:var(--near-black);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem">Cosa portare</strong>
         Scarpe da trekking con suola rigida &middot; Abbigliamento a strati &middot; Zaino 20-25L &middot; Acqua almeno 1,5L &middot; K-way &middot; Luce frontale &middot; Telo termico &middot; Pranzo al sacco &middot; Bastoncini (consigliati)
