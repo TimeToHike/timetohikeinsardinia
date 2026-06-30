@@ -304,13 +304,22 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem 5.5rem;display:flex;justify-cont
 <style>
 .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large {
   background-color: rgba(91,158,201,0.25) !important;
+  width: 30px !important;
+  height: 30px !important;
+  margin-left: -15px !important;
+  margin-top: -15px !important;
 }
 .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
   background-color: rgba(91,158,201,0.85) !important;
   color: #fff !important;
   font-family: Jost, sans-serif !important;
   font-weight: 500 !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
+  width: 22px !important;
+  height: 22px !important;
+  line-height: 22px !important;
+  margin-left: 4px !important;
+  margin-top: 4px !important;
 }
 details[open] .acc-icon { transform: rotate(45deg); }
 details summary::-webkit-details-marker { display: none; }
@@ -388,7 +397,8 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
 
   var cluster = L.markerClusterGroup({
-    maxClusterRadius: 35,
+    maxClusterRadius: 18,
+    disableClusteringAtZoom: 10,
     showCoverageOnHover: false
   });
 
