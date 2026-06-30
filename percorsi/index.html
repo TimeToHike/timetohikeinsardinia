@@ -55,6 +55,13 @@
       "name": "Trekking Canyon di Gorropu da Ponte sa Barva — Dorgali, Supramonte",
       "url": "https://timetohikeinsardinia.com/percorsi/canyon-gorropu/",
       "description": "Trekking E ~14 km, 380 m dislivello, 6-7 ore. Canyon più profondo d'Italia, pareti di 500 m, Rio Flumineddu, Aquilegia nuragica."
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Trekking Notturno a Punta La Marmora — Gennargentu",
+      "url": "https://timetohikeinsardinia.com/percorsi/punta-la-marmora/",
+      "description": "Trekking due giorni E ~15 km, 450 m dislivello, 6 ore. Vetta più alta della Sardegna, 1834 m, pernotto in quota e alba in vetta."
     }
   ],
   "provider": {
@@ -297,13 +304,22 @@ footer{background:#0e0b08;padding:2.8rem 4.5rem 5.5rem;display:flex;justify-cont
 <style>
 .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large {
   background-color: rgba(91,158,201,0.25) !important;
+  width: 30px !important;
+  height: 30px !important;
+  margin-left: -15px !important;
+  margin-top: -15px !important;
 }
 .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
   background-color: rgba(91,158,201,0.85) !important;
   color: #fff !important;
   font-family: Jost, sans-serif !important;
   font-weight: 500 !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
+  width: 22px !important;
+  height: 22px !important;
+  line-height: 22px !important;
+  margin-left: 4px !important;
+  margin-top: 4px !important;
 }
 details[open] .acc-icon { transform: rotate(45deg); }
 details summary::-webkit-details-marker { display: none; }
@@ -368,11 +384,23 @@ document.addEventListener('DOMContentLoaded', function() {
       pills: ['~14 km', '380 m dislivello', '6-7 ore', 'CAI E'],
       color: '#7a8c72',
       url: '/percorsi/canyon-gorropu/'
+    },
+    {
+      lat: 39.98786, lng: 9.32460,
+      title: 'Punta La Marmora',
+      tag: 'Gennargentu &middot; Arzana',
+      loc: '&#128205; Rifugio S&rsquo;Arena, Arzana (NU)',
+      pills: ['~15 km', '450 m dislivello', '6 ore', 'CAI E'],
+      color: '#7a8c72',
+      url: '/percorsi/punta-la-marmora/'
     }
   ];
 
   var cluster = L.markerClusterGroup({
-    maxClusterRadius: 60,
+    maxClusterRadius: 10,
+    disableClusteringAtZoom: 10,
+    spiderfyOnMaxZoom: false,
+    zoomToBoundsOnClick: true,
     showCoverageOnHover: false
   });
 
@@ -607,6 +635,31 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="pacts">
             <a href="/percorsi/canyon-gorropu/" class="btn-percorso">Scopri il percorso</a>
             <span class="diff-badge">Difficolt&agrave; &#9733;&#9733;&#9733;&#9734;&#9734; &middot; Escursionistico</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUNTA LA MARMORA -->
+      <div class="pcard">
+        <div class="pcard-img">
+          <img src="/gallery/marmora-hero.webp" alt="Trekking notturno Punta La Marmora vetta più alta della Sardegna Gennargentu Arzana" loading="lazy">
+        </div>
+        <div class="pcard-body">
+          <div>
+            <span class="ptag">Gennargentu &middot; Arzana</span>
+            <h2 class="ptitle">Trekking Notturno a Punta La Marmora</h2>
+            <p class="ploc">&#128205; Rifugio S&rsquo;Arena, Gennargentu</p>
+            <p class="pdesc">La vetta pi&ugrave; alta della Sardegna, 1834 metri, raggiunta di notte per vedere l&rsquo;alba dal tetto dell&rsquo;isola. Pernotto in quota al Rifugio S&rsquo;Arena, partenza alle prime luci verso la cima, panorama a 360&deg; su tutta la Sardegna.</p>
+            <div class="ppills">
+              <span class="pp">~15 km</span>
+              <span class="pp">450 m dislivello</span>
+              <span class="pp">6 ore</span>
+              <span class="pp">Grado CAI: E</span>
+            </div>
+          </div>
+          <div class="pacts">
+            <a href="/percorsi/punta-la-marmora/" class="btn-percorso">Scopri il percorso</a>
+            <span class="diff-badge">Difficolt&agrave; &#9733;&#9733;&#9734;&#9734;&#9734; &middot; Escursionistico</span>
           </div>
         </div>
       </div>
