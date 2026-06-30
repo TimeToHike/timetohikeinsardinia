@@ -399,6 +399,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var cluster = L.markerClusterGroup({
     maxClusterRadius: 10,
     disableClusteringAtZoom: 10,
+    spiderfyOnMaxZoom: false,
+    zoomToBoundsOnClick: true,
     showCoverageOnHover: false
   });
 
